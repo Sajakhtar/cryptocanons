@@ -8,9 +8,9 @@
 
 puts "Creating topic titles..."
 
-Topic.create(title: "Good article")
-Topic.create(title: "Bad article")
-Topic.create(title: "NFT article")
-Topic.create(title: "Bitcoin article")
+Topic.create(title: "bitcoin")
+Topic.create(title: "ethereum")
+Topic.create(title: "nft")
+Topic.create(title: "defi")
 
 puts "Finished!"
