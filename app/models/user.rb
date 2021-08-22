@@ -1,8 +1,9 @@
 class User < ApplicationRecord
-  has_many :bookmarked_articles
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
-  has_many :favorite_topics
+  :recoverable, :rememberable, :validatable
+
+  has_many :bookmarked_articles, dependent: :destroy
+  has_many :favorite_topics, dependent: :destroy
 end

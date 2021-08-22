@@ -9,6 +9,7 @@
 puts "cleaning DB"
 User.destroy_all
 Topic.destroy_all
+FavoriteTopic.destroy_all
 BookmarkedArticle.destroy_all
 
 puts "Creating users ..."
@@ -24,32 +25,34 @@ users_attributes = [
   # {first_name: 'Jamey', last_name: 'Johnson', email: 'jamey@gmail.com', password: '123456'}
 ]
 
-users = User.create!(users_attributes)
+User.create!(users_attributes)
 
 puts "Finished creating users!"
 
 puts "Creating topic titles..."
 
-topic_titles = %[ bitcoin ethereum nft defi]
+topic_titles = %w(bitcoin ethereum nft defi)
 
-topics = Topic.create!(title: topic_titles)
+topic_titles.each do |topic|
+  Topic.create!(title: topic)
+end
 
 puts "Finished creating topics!"
 
 puts "Creating BookmarkedArticle..."
 
-BookmarkedArticle.create!(user: users[0], url: "www.google.com")
-BookmarkedArticle.create!(user: users[1], url: "www.google.com")
-BookmarkedArticle.create!(user: users[2], url: "www.google.com")
-BookmarkedArticle.create!(user: users[3], url: "www.google.com")
+BookmarkedArticle.create!(user: User.first, url: "www.google.com")
+BookmarkedArticle.create!(user: User.second, url: "www.google.com")
+BookmarkedArticle.create!(user: User.third, url: "www.google.com")
+BookmarkedArticle.create!(user: User.fourth, url: "www.google.com")
 
 puts "Finished BookmarkedArticle!"
 
 puts "Creating FavoriteTopics..."
 
-FavoriteTopics.create!(user: users[0], topic: topics[0])
-FavoriteTopics.create!(user: users[1], topic: topics[1])
-FavoriteTopics.create!(user: users[2], topic: topics[2])
-FavoriteTopics.create!(user: users[3], topic: topics[3])
+FavoriteTopic.create!(user: User.first, topic: Topic.first)
+FavoriteTopic.create!(user: User.second, topic: Topic.second)
+FavoriteTopic.create!(user: User.third, topic: Topic.third)
+FavoriteTopic.create!(user: User.fourth, topic: Topic.fourth)
 
 puts "Finished FavoriteTopics..."
