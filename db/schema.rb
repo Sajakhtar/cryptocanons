@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_22_115618) do
+ActiveRecord::Schema.define(version: 2021_08_22_121216) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookmarked_articles", force: :cascade do |t|
+    t.string "url"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_bookmarked_articles_on_user_id"
+  end
 
   create_table "favorite_topics", force: :cascade do |t|
     t.bigint "user_id"
@@ -44,4 +52,5 @@ ActiveRecord::Schema.define(version: 2021_08_22_115618) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookmarked_articles", "users"
 end
