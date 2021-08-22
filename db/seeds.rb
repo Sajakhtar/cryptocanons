@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+puts "Creating topic titles..."
+
+Topic.create(title: "bitcoin")
+Topic.create(title: "ethereum")
+Topic.create(title: "nft")
+Topic.create(title: "defi")
+
+puts "Finished!"
