@@ -9,7 +9,9 @@
           <%= favorite_topic.topic.title.capitalize %>
         </button>
       </h2>
-      <%= link_to 'Delete', favorite_topic_path(favorite_topic), method: :delete, data: { confirm: "Are you sure?" } %>
+      <%= link_to favorite_topic_path(favorite_topic), method: :delete, data: { confirm: "Are you sure?" }, class: "text-danger" do %>
+        <i class="far fa-trash-alt"></i>
+      <% end %>
     </div>
     <div id="collapse<%=index.humanize.capitalize%>" class="collapse" aria-labelledby="heading<%=index.humanize.capitalize%>" data-parent="#accordionExample">
       <div class="card-body">
