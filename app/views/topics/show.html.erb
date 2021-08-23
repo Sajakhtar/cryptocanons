@@ -1,4 +1,6 @@
 <div class="container">
+  <%= link_to 'Add to favorites', topic_favorite_topics_path(@topic.id), method: :post %>
+
   <h1><%= @topic.title %></h1>
 
   <p>APi</p>
