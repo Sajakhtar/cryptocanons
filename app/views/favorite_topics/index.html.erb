@@ -8,5 +8,5 @@
       <%= link_to 'Delete', favorite_topic_path(favorite_topic), method: :delete, data: { confirm: "Are you sure?" } %>
     </p>
   <% end %>
-  <%= render 'shared/accordion' %>
+  <%= render 'shared/accordion', favorite_topics: @favorite_topics %>
 </div>
