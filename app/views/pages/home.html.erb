@@ -1,2 +1,8 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+  <h1>Cryptocanons</h1>
+
+
+  <% @topics.each do |topic| %>
+  <p><%= link_to topic.title, "topics/#{topic.id}" %></p>
+  <% end %>
+</div>
