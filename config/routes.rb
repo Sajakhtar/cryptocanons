@@ -6,6 +6,5 @@ Rails.application.routes.draw do
     resources :favorite_topics, only: :create
   end
 
-  resources :favorite_topics, only: [:index]
-
+  resources :favorite_topics, only: [:index, :destroy]
 end

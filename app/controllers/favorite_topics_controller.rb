@@ -1,6 +1,6 @@
 class FavoriteTopicsController < ApplicationController
   def index
-    @favorite_topic = FavoriteTopic.all
+    @favorite_topics = FavoriteTopic.all
   end
 
   def create
@@ -16,4 +16,10 @@ class FavoriteTopicsController < ApplicationController
     end
   end
 
+  def destroy
+    @favorite_topic = FavoriteTopic.find(params[:id])
+    @favorite_topic.destroy
+
+    redirect_to favorite_topics_path
+  end
 end
