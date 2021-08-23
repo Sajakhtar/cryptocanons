@@ -1,14 +1,15 @@
-
 .footer {
-  background: #F4F4F4;
+  background: #f4f4f4;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 64px;
   padding: 0px 15px;
-  color: rgba(0,0,0,0.3);
+  color: rgba(0, 0, 0, 0.3);
   // flex-wrap: wrap;
   font-size: 0.8rem;
+  position: absolute;
+  bottom: 0;
 }
 .footer-links {
   display: flex;
@@ -25,7 +26,7 @@
   opacity: 1;
 }
 .footer .fa-heart {
-  color: #D23333;
+  color: #d23333;
 }
 
 .footer-copyright img {
