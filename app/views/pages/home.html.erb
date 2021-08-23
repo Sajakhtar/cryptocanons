@@ -1,11 +1,13 @@
 <div class="container">
   <h1>Cryptocanons</h1>
 
-
-  <% @topics.each do |topic| %>
-  <p><%= link_to topic.title, "topics/#{topic.id}" %></p>
-  <% end %>
-
   <%= render 'shared/search-form' %>
+
+  <ul class="d-flex justify-content-around list-unstyled">
+    <% @topics.each do |topic| %>
+    <li><%= link_to topic.title.capitalize, "topics/#{topic.id}" %></li>
+    <% end %>
+  </ul>
+
 
 </div>
