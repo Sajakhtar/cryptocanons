@@ -5,4 +5,7 @@ Rails.application.routes.draw do
   resources :topics, only: :show do
     resources :favorite_topics, only: :create
   end
+
+  resources :favorite_topics, only: [:index]
+
 end
