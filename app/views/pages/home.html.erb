@@ -5,4 +5,7 @@
   <% @topics.each do |topic| %>
   <p><%= link_to topic.title, "topics/#{topic.id}" %></p>
   <% end %>
+
+  <%= render 'shared/search-form' %>
+
 </div>
