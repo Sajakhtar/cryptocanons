@@ -3,12 +3,13 @@
   <% favorite_topics.each_with_index do |favorite_topic, index| %>
 
     <div class="card">
-    <div class="card-header" id="heading<%=index.humanize.capitalize%>">
+    <div class="card-header d-flex justify-content-between" id="heading<%=index.humanize.capitalize%>">
       <h2 class="mb-0">
         <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse<%=index.humanize.capitalize%>" aria-expanded="true" aria-controls="collapse<%=index.humanize.capitalize%>">
-          <%= favorite_topic.topic.title %>
+          <%= favorite_topic.topic.title.capitalize %>
         </button>
       </h2>
+      <%= link_to 'Delete', favorite_topic_path(favorite_topic), method: :delete, data: { confirm: "Are you sure?" } %>
     </div>
     <div id="collapse<%=index.humanize.capitalize%>" class="collapse" aria-labelledby="heading<%=index.humanize.capitalize%>" data-parent="#accordionExample">
       <div class="card-body">
