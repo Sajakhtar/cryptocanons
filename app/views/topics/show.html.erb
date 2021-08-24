@@ -3,11 +3,16 @@
 
   <h1><%= @topic.title %></h1>
 
+  <%# <p>APi</p>
   <p>APi</p>
   <p>APi</p>
   <p>APi</p>
-  <p>APi</p>
-  <p>APi</p>
+  <p>APi</p> %>
 
-  <%= link_to 'Back', root_path, class: 'btn btn-secondary' %>
+  <div class="cards">
+    <%= render 'shared/article-card' %>
+  </div>
+
+  <%# <%= link_to 'Back', root_path, class: 'btn btn-secondary' %>
+
 </div>
