@@ -6,6 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'json'
+require 'open-uri'
+require 'rest-client'
+
 puts "cleaning DB"
 User.destroy_all
 Topic.destroy_all
@@ -31,7 +35,22 @@ puts "Finished creating users!"
 
 puts "Creating topic titles..."
 
-topic_titles = %w(bitcoin ethereum nft defi)
+key = ENV["COINMARKETCAP_KEY"]
+url = "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY=#{key}&limit=200"
+
+
+response = RestClient.get url
+results = JSON.parse(response)
+
+data = results['data']
+
+topic_titles = ['blockchain', 'cryptocurrencies', 'crypto', 'nft', 'nonfungible tokens', 'defi', 'decentralized finance', 'cefi', 'centralized finance', 'metaverse', 'cdbc', 'central bank digital currency', 'stable coin', 'yield farming', 'liquidity mining']
+
+data.map! do |crypto|
+  "#{crypto['name']} $#{crypto['symbol']}"
+end
+
+topic_titles += data
 
 topic_titles.each do |topic|
   Topic.create!(title: topic)
