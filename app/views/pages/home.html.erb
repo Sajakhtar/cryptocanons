@@ -11,4 +11,10 @@
       <li><%= link_to topic.title.capitalize, topic_path(topic.id) %></li>
     <% end %>
   </ul>
+
+  <div class="cards">
+    <%= render 'shared/article-card' %>
+  </div>
+
+
 </div>

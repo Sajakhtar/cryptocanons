@@ -1,5 +1,5 @@
 .footer {
-  background: #f4f4f4;
+  background: $light-gray;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -8,7 +8,6 @@
   color: rgba(0, 0, 0, 0.3);
   // flex-wrap: wrap;
   font-size: 0.8rem;
-  position: absolute;
   bottom: 0;
 }
 .footer-links {
@@ -26,9 +25,19 @@
   opacity: 1;
 }
 .footer .fa-heart {
-  color: #d23333;
+  color: $light-gray;
 }
 
 .footer-copyright img {
   width: 20px;
+}
+
+@media screen and ( max-width:749px ){
+
+.footer {
+    height: auto;padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
