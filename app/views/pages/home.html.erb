@@ -1,10 +1,7 @@
 <div class="container">
   <h1>Cryptocanons</h1>
 
-  <%= simple_form_for :search, method: :get do |f| %>
-    <%= f.input :topic_id , collection: @topics %>
-    <%= f.button :submit %>
-  <% end %>
+  <%= render 'shared/select_topic_form' %>
 
   <ul class="d-flex justify-content-around list-unstyled">
     <% @topics.each do |topic| %>
@@ -15,6 +12,5 @@
   <div class="cards">
     <%= render 'shared/article-card' %>
   </div>
-
 
 </div>
