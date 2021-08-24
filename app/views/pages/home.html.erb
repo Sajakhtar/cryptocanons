@@ -5,10 +5,10 @@
 
   <ul class="d-flex justify-content-around list-unstyled">
     <% @topics.each do |topic| %>
-    <li><%= link_to topic.title.capitalize, "topics/#{topic.id}" %></li>
+    <li><%= link_to topic.title.capitalize, topic_path(topic.id) %></li>
     <% end %>
   </ul>
 
-  <%# <%= render 'shared/article-card' %> %>
+  <%#= render 'shared/article-card' %>
 
 </div>
