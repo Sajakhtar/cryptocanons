@@ -7,7 +7,16 @@ class TopicsController < ApplicationController
 
   def show
     @topic = Topic.find(params[:id])
-    @recent_search = twitter_recent_search['data']
+    api_result = twitter_recent_search
+    @tweets_data = api_result['data']
+    @tweets_users = api_result['includes']['users']
+    @tweets_data.map! do |tweet|
+      author = @tweets_users.find { |user| user['id'] == tweet['author_id'] }
+      tweet['user'] = author
+      # tweet.delete(:author_id)
+      tweet
+    end
+
   end
 
   private
