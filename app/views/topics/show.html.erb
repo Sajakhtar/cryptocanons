@@ -15,4 +15,11 @@
 
   <%# <%= link_to 'Back', root_path, class: 'btn btn-secondary' %>
 
+  <ul>
+    <% @recent_search.each do |tweet| %>
+      <li><%= tweet['text'] %></li>
+    <% end %>
+  </ul>
+
+  <%= link_to 'Back', root_path, class: 'btn btn-secondary' %>
 </div>

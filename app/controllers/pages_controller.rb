@@ -3,5 +3,6 @@ class PagesController < ApplicationController
 
   def home
     @topics = Topic.all
+    redirect_to topic_path(params[:search][:topic_id]) if params[:search]
   end
 end
