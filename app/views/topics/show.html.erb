@@ -2,24 +2,35 @@
   <%= link_to 'Add to favorites', topic_favorite_topics_path(@topic.id), method: :post %>
 
   <h1><%= @topic.title %></h1>
+    <% @tweets_data.each do |tweet| %>
 
-  <%# <p>APi</p>
-  <p>APi</p>
-  <p>APi</p>
-  <p>APi</p>
-  <p>APi</p> %>
-
-  <div class="cards">
-    <%= render 'shared/article_card' %>
-  </div>
-
-  <%# <%= link_to 'Back', root_path, class: 'btn btn-secondary' %>
-
-  <ul>
-    <% @recent_search.each do |tweet| %>
-      <li><%= tweet['text'] %></li>
+      <div class="cards">
+        <div class="card w-100">
+          <img src="https://images.unsplash.com/photo-1561451213-d5c9f0951fdf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1489&q=80" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"><%= tweet['user']['username']%></h5>
+            <p class="card-text"><%= tweet['text'] %></p>
+            <ul class="d-flex justify-content-around p-0">
+              <li class="list-unstyled">
+                <%= link_to root_path do %>
+                  <i class="fab fa-twitter"></i>
+                <% end %>
+              </li>
+              <li class="list-unstyled">
+                <%= link_to root_path do %>
+                  <i class="far fa-newspaper"></i>
+                <% end %>
+              </li>
+              <li class="list-unstyled">
+                <%= link_to root_path do %>
+                  <i class="far fa-bookmark"></i>
+                <% end %>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     <% end %>
-  </ul>
 
   <%= link_to 'Back', root_path, class: 'btn btn-secondary' %>
 </div>
