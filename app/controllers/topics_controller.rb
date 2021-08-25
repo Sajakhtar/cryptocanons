@@ -24,7 +24,10 @@ class TopicsController < ApplicationController
   def twitter_recent_search
     bearer_token = ENV["BEARER_TOKEN"]
     search_url = "https://api.twitter.com/2/tweets/search/recent"
-    query = "#{@topic.title} lang:en is:verified -is:quote -is:retweet -is:reply (has:media OR has:links OR has:hashtags OR has:videos OR has:mentions)"
+
+    keyword = "\"#{@topic.title}\""
+    keyword += "OR \"#{@topic.cashtag}\"" if @topic.cashtag
+    query = "#{keyword} lang:en is:verified -is:quote -is:retweet -is:reply (has:media OR has:links OR has:hashtags OR has:videos OR has:mentions)"
 
     query_params = {
       "query": query, # Required
