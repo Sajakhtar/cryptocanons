@@ -28,8 +28,7 @@ class TopicsController < ApplicationController
     # # https://twitter.com/#{tweet['user']['username']}/status/#{tweet['id']}
 
     # @tweets_data = @tweets_data.first(5)
-    tweets__clean_service = TweetsClean.new(@topic, 5)
-    @tweets_data = tweets__clean_service.tweets
+    @tweets_data = TweetsClean.new(@topic, 5).tweets
   end
 
   # private

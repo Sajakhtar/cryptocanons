@@ -8,10 +8,12 @@ class TweetsRaw
     bearer_token = ENV["BEARER_TOKEN"]
     search_url = "https://api.twitter.com/2/tweets/search/recent"
 
+    # 3 move to private method query builder
     keyword = "\"#{@topic.title}\""
     keyword += "OR \"#{@topic.cashtag}\"" if @topic.cashtag
     query = "#{keyword} lang:en is:verified -is:quote -is:retweet -is:reply (has:media OR has:links OR has:hashtags OR has:videos OR has:mentions)"
 
+    # 3 private method
     query_params = {
       "query": query, # Required
       "max_results": 100,
@@ -26,6 +28,7 @@ class TweetsRaw
       # "poll.fields": "options"
     }
 
+    # move to private method
     def search_tweets(url, bearer_token, query_params)
       options = {
         method: 'get',
@@ -44,7 +47,7 @@ class TweetsRaw
 
     response = search_tweets(search_url, bearer_token, query_params)
     # puts response.code, JSON.pretty_generate(JSON.parse(response.body))
-    result = JSON.parse(response.body)
+    result = JSON.parse(response.body) # don't create a variable
 
     # puts response.code, JSON.pretty_generate(result['data'][0])
   end
