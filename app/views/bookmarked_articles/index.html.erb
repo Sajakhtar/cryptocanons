@@ -13,6 +13,11 @@
               <i class="fab fa-twitter"></i>
             <% end %>
           </li>
+          <li class="list-unstyled">
+            <%= link_to bookmarked_article_path(article), method: :delete, data: { confirm: "Are you sure? "} do %>
+              <i class="fas fa-trash"></i>
+            <% end %>
+          </li>
         </ul>
       </div>
     </div>
