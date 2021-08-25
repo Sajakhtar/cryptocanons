@@ -3,13 +3,16 @@
 
   <h1><%= @topic.title %></h1>
     <% @tweets_data.each do |tweet| %>
-
+      <% username = tweet['user']['username'] %>
+      <% text = tweet['text'] %>
+      <% tweet_id = tweet['id'] %>
+      <% followers = tweet['user']['public_metrics']['followers_count'] %>
       <div class="cards">
         <div class="card w-100">
           <div class="card-body">
-            <h5 class="card-title">@<%= tweet['user']['username']%> </h5>
-            <h6><%= number_to_human(tweet['user']['public_metrics']['followers_count'], units: { thousand: 'K', million: 'M' }) %> Followers </h6>
-            <p class="card-text"><%= tweet['text'] %></p>
+            <h5 class="card-title">@<%= username%> </h5>
+            <h6><%= number_to_human(followers, units: { thousand: 'K', million: 'M' }) %> Followers </h6>
+            <p class="card-text"><%= text %></p>
             <ul class="d-flex justify-content-around p-0">
               <li class="list-unstyled">
                 <%= link_to "#{tweet['tweet_url']}", target: '_blank' do %>
@@ -17,7 +20,7 @@
                 <% end %>
               </li>
               <li class="list-unstyled">
-                <%= link_to root_path do %>
+                <%= link_to bookmarked_articles_path(tweet: {username: username, text: text, followers: followers, tweet_id: tweet_id}), method: :post do %>
                   <i class="far fa-bookmark"></i>
                 <% end %>
               </li>
