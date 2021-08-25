@@ -1,6 +1,6 @@
-require 'date'
-require 'json'
-require 'typhoeus'
+# require 'date'
+# require 'json'
+# require 'typhoeus'
 
 class TopicsController < ApplicationController
   skip_before_action :authenticate_user!, only: :show
@@ -16,7 +16,11 @@ class TopicsController < ApplicationController
       # tweet.delete(:author_id)
       tweet
     end
+    @tweets_data.select! { |tweet| tweet['user']["public_metrics"]["followers_count"] > 1000  }
 
+    @tweets_data.sort! { |a,b| b['user']["public_metrics"]["followers_count"] <=> a['user']["public_metrics"]["followers_count"]}
+
+    @tweets_data = @tweets_data.first(5)
   end
 
   private
@@ -31,7 +35,7 @@ class TopicsController < ApplicationController
 
     query_params = {
       "query": query, # Required
-      "max_results": 10,
+      "max_results": 100,
       # "start_time": "2021-08-24T00:00:00Z", # TRY WITH RUBY DATE
       "start_time": Date.today.strftime("%Y-%m-%dT%H:%M:%SZ"),
       # "end_time": "2020-07-02T18:00:00Z",
