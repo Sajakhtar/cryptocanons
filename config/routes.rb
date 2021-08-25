@@ -8,5 +8,5 @@ Rails.application.routes.draw do
 
   resources :favorite_topics, only: [:index, :destroy]
 
-  resources :bookmarked_articles, only: [:index, :show, :create]
+  resources :bookmarked_articles, only: [:index, :show, :create, :destroy]
 end
