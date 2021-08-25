@@ -12,7 +12,7 @@
             <p class="card-text"><%= tweet['text'] %></p>
             <ul class="d-flex justify-content-around p-0">
               <li class="list-unstyled">
-                <%= link_to "https://twitter.com/#{tweet['user']['username']}/status/#{tweet['id']}", target: '_blank' do %>
+                <%= link_to "#{tweet['tweet_url']}", target: '_blank' do %>
                   <i class="fab fa-twitter"></i>
                 <% end %>
               </li>
