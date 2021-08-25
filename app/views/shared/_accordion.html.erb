@@ -1,33 +1,26 @@
 <div class="accordion" id="accordionExample">
-
   <% favorite_topics.each_with_index do |favorite_topic, index| %>
 
     <div class="card">
-    <div class="card-header d-flex justify-content-between" id="heading<%=index.humanize.capitalize%>">
-    <div class="flex-grow-1">
-      <h2 class="mb-0">
-        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse<%=index.humanize.capitalize%>" aria-expanded="true" aria-controls="collapse<%=index.humanize.capitalize%>">
-        <h3><%= favorite_topic.topic.title.capitalize %> </h3>
-        </button>
-      </h2>
-      </div>
-      <%= link_to favorite_topic_path(favorite_topic), method: :delete, data: { confirm: "Are you sure?" }, class: "text-danger" do %>
+      <div class="card-header d-flex justify-content-between align-items-center" id="heading<%=index.humanize.capitalize%>">
+        <h2 class="mb-0 flex-grow-1">
+          <button class="btn btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse<%=index.humanize.capitalize%>" aria-expanded="true" aria-controls="collapse<%=index.humanize.capitalize%>">
+            <strong><%= favorite_topic.topic.title.capitalize %></strong>
+          </button>
+        </h2>
+
+        <%= link_to favorite_topic_path(favorite_topic), method: :delete, data: { confirm: "Are you sure?" }, class: "text-danger" do %>
         <i class="far fa-trash-alt"></i>
-      <% end %>
+        <% end %>
+
       </div>
-    <div id="collapse<%=index.humanize.capitalize%>" class="collapse" aria-labelledby="heading<%=index.humanize.capitalize%>" data-parent="#accordionExample">
-      <div class="card-body">
-    <%= render 'shared/article_card' %>
-      </div>
-      <div class="card-body">
-    <%= render 'shared/article_card' %>
-      </div>
-      <div class="card-body">
-    <%= render 'shared/article_card' %>
+
+      <div id="collapse<%=index.humanize.capitalize%>" class="collapse" aria-labelledby="heading<%=index.humanize.capitalize%>" data-parent="#accordionExample">
+        <div class="card-body">
+          <%= render 'shared/article_card' %>
+        </div>
       </div>
     </div>
-  </div>
 
   <% end %>
-
 </div>
