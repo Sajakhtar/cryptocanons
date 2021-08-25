@@ -6,9 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-require 'json'
-require 'open-uri'
-require 'rest-client'
+# require 'json'
+# require 'open-uri'
+# require 'rest-client'
 
 puts "cleaning DB"
 User.destroy_all
@@ -36,7 +36,7 @@ puts "Finished creating users!"
 puts "Creating topic titles..."
 
 # General Topics
-topic_titles = ['blockchain', 'cryptocurrencies', 'crypto', 'nft', 'defi', 'metaverse', 'central bank digital currency']
+topic_titles = ['Blockchain', 'Cryptocurrencies', 'Crypto', 'NFT', 'DeFi', 'Metaverse', 'Central Bank digital currency']
 
 generic_icon = 'https://image0.flaticon.com/icons/png/128/2152/2152488.png'
 
