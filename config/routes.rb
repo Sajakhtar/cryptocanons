@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   end
 
   resources :favorite_topics, only: [:index, :destroy]
+
+  resources :bookmarked_articles, only: [:index, :show, :create]
 end

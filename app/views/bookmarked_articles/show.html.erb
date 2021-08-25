@@ -1,0 +1,18 @@
+<h1>Hello there!</h1>
+
+<div class="cards">
+  <div class="card w-100">
+    <div class="card-body">
+      <h5 class="card-title">@<%= @bookmarked_article.username%> </h5>
+      <h6><%= number_to_human(@bookmarked_article.followers, units: { thousand: 'K', million: 'M' }) %> Followers </h6>
+      <p class="card-text"><%= @bookmarked_article.text %></p>
+      <ul class="d-flex justify-content-around p-0">
+        <li class="list-unstyled">
+          <%= link_to "https://twitter.com/#{@bookmarked_article.username}/status/#{@bookmarked_article.tweet_id}", target: '_blank' do %>
+            <i class="fab fa-twitter"></i>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
