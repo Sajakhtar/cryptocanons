@@ -65,7 +65,7 @@ data.map! do |crypto|
 
   if crypto["coingecko_id"]
     # Coingecko Free API* has a rate limit of 50 calls/minute
-    sleep 0.5
+    sleep 1
     coinggecko_coin_endpoint = "https://api.coingecko.com/api/v3/coins/#{crypto["coingecko_id"]}"
     coingecko_coin_response = RestClient.get coinggecko_coin_endpoint
     coingecko_coin_results = JSON.parse(coingecko_coin_response)
