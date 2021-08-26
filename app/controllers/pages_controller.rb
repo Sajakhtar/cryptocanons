@@ -3,7 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @topics = Topic.all
-    blockchain_topic = Topic.find_by(title: 'blockchain')
+    blockchain_topic = Topic.find_by(title: 'Blockchain')
     @tweets_data = HandleTweets.new(blockchain_topic, 3).format_tweets
     redirect_to topic_path(params[:search][:topic_id]) if params[:search]
   end
