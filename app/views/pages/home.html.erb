@@ -8,7 +8,7 @@
 <div class="container mt-5">
   <div class="text-center">
     <h5 class="m-4">Keep up to date with crypto news from the best sources</h5>
-    <%= image_tag 'home-tweet', class: 'home-image-tweet' %>
+    <%= image_tag 'home-tweet', class: 'home-image-tweet', data: {aos: "zoom-in"} %>
   </div>
 </div>
 
@@ -16,8 +16,8 @@
   <div class="container">
     <h5 class="white-text">See the latest trends!</h5>
     <h5 class="white-text mt-3">Live traking for all your favorite coins</h5>
-    <%= image_tag 'homepage-btc(1)', class: 'chart-image' %>
-    <%= image_tag 'homepage-eth(1)'%>
+    <%= image_tag 'homepage-btc(1)', class: 'chart-image', data: {aos: "zoom-in"} %>
+    <%= image_tag 'homepage-eth(1)', data: {aos: "zoom-in"}%>
   </div>
 </div>
 
@@ -43,7 +43,7 @@
 <div class="container p-4" style="background: #324574;">
   <h5 class="white-text text-center">What you can expect:</h5>
   <% @tweets_data.each do |tweet| %>
-    <div class="my-3">
+    <div class="my-3" data-aos="fade-left">
       <%= render 'shared/tweet_card', username: tweet['user']['username'],
                                       text: tweet['text'],
                                       tweet_id: tweet['id'],
