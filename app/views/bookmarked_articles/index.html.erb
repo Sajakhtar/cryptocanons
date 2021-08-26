@@ -1,25 +1,27 @@
-<h1>Bookmarked Articles</h1>
+<div class="container">
+  <h1 class="text-center">Bookmarks</h1>
 
-<div class="cards">
-  <% @bookmarked_articles.each do |article| %>
-    <div class="card w-100">
-      <div class="card-body">
-        <h5 class="card-title">@<%= article.username%> </h5>
-        <h6><%= number_to_human(article.followers, units: { thousand: 'K', million: 'M' }) %> Followers </h6>
-        <p class="card-text"><%= article.text %></p>
-        <ul class="d-flex justify-content-around p-0">
-          <li class="list-unstyled">
-            <%= link_to "https://twitter.com/#{article.username}/status/#{article.tweet_id}", target: '_blank' do %>
-              <i class="fab fa-twitter"></i>
-            <% end %>
-          </li>
-          <li class="list-unstyled">
-            <%= link_to bookmarked_article_path(article), method: :delete, data: { confirm: "Are you sure? "} do %>
-              <i class="fas fa-trash"></i>
-            <% end %>
-          </li>
-        </ul>
+  <div class="cards">
+    <% @bookmarked_articles.each do |article| %>
+      <div class="card w-100">
+        <div class="card-body">
+          <h5 class="card-title">@<%= article.username%> </h5>
+          <h6><%= number_to_human(article.followers, units: { thousand: 'K', million: 'M' }) %> Followers </h6>
+          <p class="card-text"><%= article.text %></p>
+          <ul class="d-flex justify-content-around p-0">
+            <li class="list-unstyled">
+              <%= link_to "https://twitter.com/#{article.username}/status/#{article.tweet_id}", target: '_blank' do %>
+                <i class="fab fa-twitter"></i>
+              <% end %>
+            </li>
+            <li class="list-unstyled">
+              <%= link_to bookmarked_article_path(article), method: :delete, data: { confirm: "Are you sure? "} do %>
+                <i class="fas fa-trash"></i>
+              <% end %>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
