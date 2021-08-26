@@ -1,9 +1,24 @@
 // Specific CSS for your home-page
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+
 .home-h1 {
   color: white;
   font-size: 30px !important;
+  font-weight: 400;
 }
 
 .search-button {
   background: #eee8a9;
+  height: 2.4rem;
+}
+
+.home-image-tweet {
+  margin-left: 15px;
+}
+
+.roboto {
+  font-family: "Roboto", sans-serif !important;
+}
+
+.chart-image {
 }
