@@ -1,4 +1,4 @@
-<div class="accordion" id="accordionExample">
+<div class="accordion my-1" id="accordionExample">
   <% favorite_topics.each_with_index do |favorite_topic, index| %>
 
     <div class="card">
@@ -18,7 +18,17 @@
       <div id="collapse<%=index.humanize.capitalize%>" class="collapse" aria-labelledby="heading<%=index.humanize.capitalize%>" data-parent="#accordionExample">
         <div class="card-body">
           <div class="cards">
-            <%= render 'shared/article_card' %>
+            <%# loop topics_tweets %>
+            <%# render tweet card %>
+            <% topics_tweets[favorite_topic.topic.title].each do |tweet| %>
+              <%= render 'shared/tweet_card', username: tweet['user']['username'],
+                                        text: tweet['text'],
+                                        tweet_id: tweet['id'],
+                                        followers: tweet['user']['public_metrics']['followers_count'],
+                                        tweet_url: tweet['tweet_url'],
+                                        image_url: nil,
+                                        article_url: nil %>
+            <% end %>
           </div>
         </div>
       </div>
