@@ -1,0 +1,31 @@
+<div class="card w-100 my-1 shadow-sm">
+  <% if image_url %>
+    <%= image_tag(image_url, {class: "card-img-top"}) %>
+  <% end %>
+  <div class="card-body">
+    <div class="d-flex">
+      <h5 class="card-title pr-2">@<%= username %> </h5>
+      <small><%= number_to_human(followers, units: { thousand: 'K', million: 'M' }) %> Followers </small>
+    </div>
+    <p class="card-text"><%= text %></p>
+    <ul class="d-flex justify-content-around p-0">
+      <li class="list-unstyled">
+        <%= link_to tweet_url, target: '_blank' do %>
+          <i class="fab fa-twitter"></i>
+        <% end %>
+      </li>
+      <% if article_url %>
+        <li class="list-unstyled">
+          <%= link_to article_url, target: '_blank' do %>
+            <i class="far fa-newspaper"></i>
+          <% end %>
+        </li>
+      <% end %>
+      <li class="list-unstyled">
+        <%= link_to bookmarked_articles_path(tweet: {username: username, text: text, followers: followers, tweet_id: tweet_id}), method: :post do %>
+          <i class="far fa-bookmark"></i>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</div>

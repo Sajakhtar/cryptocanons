@@ -2,33 +2,17 @@
   <%= link_to 'Add to favorites', topic_favorite_topics_path(@topic.id), method: :post %>
 
   <h1><%= @topic.title %></h1>
-    <% @tweets_data.each do |tweet| %>
-      <% username = tweet['user']['username'] %>
-      <% text = tweet['text'] %>
-      <% tweet_id = tweet['id'] %>
-      <% followers = tweet['user']['public_metrics']['followers_count'] %>
-      <div class="cards">
-        <div class="card w-100">
-          <div class="card-body">
-            <h5 class="card-title">@<%= username%> </h5>
-            <h6><%= number_to_human(followers, units: { thousand: 'K', million: 'M' }) %> Followers </h6>
-            <p class="card-text"><%= text %></p>
-            <ul class="d-flex justify-content-around p-0">
-              <li class="list-unstyled">
-                <%= link_to "#{tweet['tweet_url']}", target: '_blank' do %>
-                  <i class="fab fa-twitter"></i>
-                <% end %>
-              </li>
-              <li class="list-unstyled">
-                <%= link_to bookmarked_articles_path(tweet: {username: username, text: text, followers: followers, tweet_id: tweet_id}), method: :post do %>
-                  <i class="far fa-bookmark"></i>
-                <% end %>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    <% end %>
+    <div class="cards">
+      <% @tweets_data.each do |tweet| %>
+        <%= render 'shared/tweet_card', username: tweet['user']['username'],
+                                        text: tweet['text'],
+                                        tweet_id: tweet['id'],
+                                        followers: tweet['user']['public_metrics']['followers_count'],
+                                        tweet_url: tweet['tweet_url'],
+                                        image_url: nil,
+                                        article_url: nil %>
+      <% end %>
+    </div>
 
   <%= link_to 'Back', root_path, class: 'btn btn-secondary' %>
 </div>
