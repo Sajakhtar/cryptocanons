@@ -7,7 +7,9 @@
                                       text: tweet['text'],
                                       tweet_id: tweet['id'],
                                       followers: tweet['user']['public_metrics']['followers_count'],
-                                      tweet_url: tweet['tweet_url'] %>
+                                      tweet_url: tweet['tweet_url'],
+                                      image_url: nil,
+                                      article_url: nil %>
     <% end %>
 
   <%= link_to 'Back', root_path, class: 'btn btn-secondary' %>
