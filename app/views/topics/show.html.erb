@@ -2,15 +2,17 @@
   <%= link_to 'Add to favorites', topic_favorite_topics_path(@topic.id), method: :post %>
 
   <h1><%= @topic.title %></h1>
-    <% @tweets_data.each do |tweet| %>
-      <%= render 'shared/tweet_card', username: tweet['user']['username'],
-                                      text: tweet['text'],
-                                      tweet_id: tweet['id'],
-                                      followers: tweet['user']['public_metrics']['followers_count'],
-                                      tweet_url: tweet['tweet_url'],
-                                      image_url: nil,
-                                      article_url: nil %>
-    <% end %>
+    <div class="cards">
+      <% @tweets_data.each do |tweet| %>
+        <%= render 'shared/tweet_card', username: tweet['user']['username'],
+                                        text: tweet['text'],
+                                        tweet_id: tweet['id'],
+                                        followers: tweet['user']['public_metrics']['followers_count'],
+                                        tweet_url: tweet['tweet_url'],
+                                        image_url: nil,
+                                        article_url: nil %>
+      <% end %>
+    </div>
 
   <%= link_to 'Back', root_path, class: 'btn btn-secondary' %>
 </div>
