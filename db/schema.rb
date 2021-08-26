@@ -26,12 +26,6 @@ ActiveRecord::Schema.define(version: 2021_08_25_115338) do
     t.index ["user_id"], name: "index_bookmarked_articles_on_user_id"
   end
 
-  create_table "chatrooms", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "favorite_topics", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "topic_id"
@@ -39,16 +33,6 @@ ActiveRecord::Schema.define(version: 2021_08_25_115338) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["topic_id"], name: "index_favorite_topics_on_topic_id"
     t.index ["user_id"], name: "index_favorite_topics_on_user_id"
-  end
-
-  create_table "messages", force: :cascade do |t|
-    t.string "content"
-    t.bigint "chatroom_id", null: false
-    t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
-    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "topics", force: :cascade do |t|
@@ -71,12 +55,9 @@ ActiveRecord::Schema.define(version: 2021_08_25_115338) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "first_name"
     t.string "last_name"
-    t.string "nickname"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "bookmarked_articles", "users"
-  add_foreign_key "messages", "chatrooms"
-  add_foreign_key "messages", "users"
 end
