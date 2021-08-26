@@ -38,7 +38,7 @@ puts "Creating topic titles..."
 # General Topics
 topic_titles = ['Blockchain', 'Cryptocurrencies', 'Crypto', 'NFT', 'DeFi', 'Metaverse', 'Central Bank digital currency']
 
-generic_icon = 'https://image0.flaticon.com/icons/png/128/2152/2152488.png'
+generic_icon = 'https://image.flaticon.com/icons/png/32/3985/3985588.png'
 
 topic_titles.each do |topic|
   Topic.create!(title: topic, icon_url: generic_icon)
@@ -86,21 +86,3 @@ end
 
 
 puts "Finished creating topics!"
-
-puts "Creating BookmarkedArticle..."
-
-BookmarkedArticle.create!(user: User.first, url: "https://twitter.com/Cointelegraph/status/1430358523360288768")
-BookmarkedArticle.create!(user: User.second, url: "https://twitter.com/JordanSchachtel/status/1430198722122686473")
-BookmarkedArticle.create!(user: User.third, url: "https://twitter.com/Okcoin/status/1430207419473448972")
-BookmarkedArticle.create!(user: User.fourth, url: "https://twitter.com/BTCTN/status/1430350295528259588")
-
-puts "Finished BookmarkedArticle!"
-
-puts "Creating FavoriteTopics..."
-
-FavoriteTopic.create!(user: User.first, topic: Topic.first)
-FavoriteTopic.create!(user: User.second, topic: Topic.second)
-FavoriteTopic.create!(user: User.third, topic: Topic.third)
-FavoriteTopic.create!(user: User.fourth, topic: Topic.fourth)
-
-puts "Finished FavoriteTopics..."
