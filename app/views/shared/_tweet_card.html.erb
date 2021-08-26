@@ -5,7 +5,7 @@
   <div class="card-body">
     <div class="d-flex">
       <h5 class="card-title pr-2">@<%= username %> </h5>
-      <small><%= number_to_human(followers, units: { thousand: 'K', million: 'M' }) %> Followers </small>
+      <small class="text-secondary"><%= number_to_human(followers, units: { thousand: 'K', million: 'M' }) %> Followers </small>
     </div>
     <p class="card-text"><%= text %></p>
     <ul class="d-flex justify-content-around p-0">

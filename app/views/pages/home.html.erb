@@ -4,7 +4,16 @@
   <%= render 'shared/select_topic_form' %>
 
   <div class="cards">
-    <%= render 'shared/article_card' %>
+    <%#= render 'shared/article_card' %>
+    <% @tweets_data.each do |tweet| %>
+      <%= render 'shared/tweet_card', username: tweet['user']['username'],
+                                      text: tweet['text'],
+                                      tweet_id: tweet['id'],
+                                      followers: tweet['user']['public_metrics']['followers_count'],
+                                      tweet_url: tweet['tweet_url'],
+                                      image_url: nil,
+                                      article_url: nil %>
+    <% end %>
   </div>
 
 </div>
