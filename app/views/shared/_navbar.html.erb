@@ -15,6 +15,9 @@
         <li class="nav-item active">
           <%= link_to "My topics", favorite_topics_path, class: "nav-link border border-secondary rounded text-center text-secondary mx-1 my-1 bg-white nav-filled" %>
         </li>
+        <li class="nav-item active">
+          <%= link_to "Bookmarks", bookmarked_articles_path, class: "nav-link border border-secondary rounded text-center text-secondary mx-1 my-1 bg-white nav-filled" %>
+        </li>
         <li class="nav-item">
           <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "nav-link border border-secondary rounded text-center mx-1 my-1 bg-transparent text-secondary" %>
         </li>
