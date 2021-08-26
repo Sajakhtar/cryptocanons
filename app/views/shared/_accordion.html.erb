@@ -1,12 +1,15 @@
-<div class="accordion" id="accordionExample">
+<div class="accordion my-1" id="accordionExample">
   <% favorite_topics.each_with_index do |favorite_topic, index| %>
 
     <div class="card">
       <div class="card-header d-flex justify-content-between align-items-center" id="heading<%=index.humanize.capitalize%>">
         <h2 class="mb-0 flex-grow-1">
+
           <button class="btn btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse<%=index.humanize.capitalize%>" aria-expanded="true" aria-controls="collapse<%=index.humanize.capitalize%>">
+            <%= image_tag(favorite_topic.topic.icon_url) %>
             <strong><%= favorite_topic.topic.title.capitalize %></strong>
           </button>
+
         </h2>
 
         <%= link_to favorite_topic_path(favorite_topic), method: :delete, data: { confirm: "Are you sure?" }, class: "text-danger" do %>
@@ -17,7 +20,19 @@
 
       <div id="collapse<%=index.humanize.capitalize%>" class="collapse" aria-labelledby="heading<%=index.humanize.capitalize%>" data-parent="#accordionExample">
         <div class="card-body">
-          <%= render 'shared/article_card' %>
+          <div class="cards">
+            <%# loop topics_tweets %>
+            <%# render tweet card %>
+            <% topics_tweets[favorite_topic.topic.title].each do |tweet| %>
+              <%= render 'shared/tweet_card', username: tweet['user']['username'],
+                                        text: tweet['text'],
+                                        tweet_id: tweet['id'],
+                                        followers: tweet['user']['public_metrics']['followers_count'],
+                                        tweet_url: tweet['tweet_url'],
+                                        image_url: nil,
+                                        article_url: nil %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
