@@ -23,8 +23,6 @@
       <div id="collapse<%=index.humanize.capitalize%>" class="collapse" aria-labelledby="heading<%=index.humanize.capitalize%>" data-parent="#accordionExample">
         <div class="card-body">
           <div class="cards">
-            <%# loop topics_tweets %>
-            <%# render tweet card %>
             <% topics_tweets[favorite_topic.topic.title].each do |tweet| %>
               <%= render 'shared/tweet_card', username: tweet['user']['username'],
                                         text: tweet['text'],
