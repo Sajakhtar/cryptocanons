@@ -9,7 +9,8 @@
             <%= image_tag(favorite_topic.topic.icon_url) %>
             <strong><%= favorite_topic.topic.title.capitalize %></strong>
             <% if favorite_topic.topic.coingecko_id %>
-              <small class="price" data-coingecko-id="<%= favorite_topic.topic.coingecko_id %>"><%= favorite_topic.topic.coingecko_id %></small>
+              <span class="price text-secondary" data-coingecko-id="<%= favorite_topic.topic.coingecko_id %>"></span>
+              <small class=""></small>
             <% end %>
           </button>
         </h2>
