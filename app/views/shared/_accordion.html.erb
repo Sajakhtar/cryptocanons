@@ -8,8 +8,10 @@
           <button class="btn btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse<%=index.humanize.capitalize%>" aria-expanded="true" aria-controls="collapse<%=index.humanize.capitalize%>">
             <%= image_tag(favorite_topic.topic.icon_url) %>
             <strong><%= favorite_topic.topic.title.capitalize %></strong>
+            <% if favorite_topic.topic.coingecko_id %>
+              <small class="price" data-coingecko-id="<%= favorite_topic.topic.coingecko_id %>"><%= favorite_topic.topic.coingecko_id %></small>
+            <% end %>
           </button>
-
         </h2>
 
         <%= link_to favorite_topic_path(favorite_topic), method: :delete, data: { confirm: "Are you sure?" }, class: "text-danger" do %>
