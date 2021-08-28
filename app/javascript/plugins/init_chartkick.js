@@ -7,16 +7,14 @@ const fetchMarketData = (id) => {
     .then(response => response.json())
     .then((data) => {
       // console.log(data.prices)
-      // map over prices
-        // convert timestamp into date time new Date(unix_timestamp * 1000);
-        // format as an object { "2021-08-20": 11, "2021-08-21": 6, "2021-08-22": 9 }
+      // convert timestamp into date time new Date(unix_timestamp * 1000);
+      // format as an object { "2021-08-20": 11, "2021-08-21": 6, "2021-08-22": 9 }
       const marketData = {}
       data.prices.forEach((item) => {
-        const key = new Date(item[0] * 1000);
-        marketData[key] = item[1]
+        const dateFormatted = new Date(item[0] * 1000);
+        marketData[dateFormatted] = item[1]
       })
-      console.log(marketData)
-
+      console.log(marketData) // test this
 
     });
 }
