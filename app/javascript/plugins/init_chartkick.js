@@ -3,7 +3,7 @@ import "chartkick/chart.js"
 
 
 const fetchMarketData = (id) => {
-  fetch(`https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=7`)
+  fetch(`https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&interval=daily&days=7`)
     .then(response => response.json())
     .then((data) => {
       // console.log(data.prices)
@@ -12,7 +12,8 @@ const fetchMarketData = (id) => {
       const marketData = {}
       data.prices.forEach((item) => {
         const dateFormatted = new Date(item[0] * 1000);
-        marketData[dateFormatted] = item[1]
+        const dateString = key.toUTCString(); // .toLocaleString()
+        marketData[dateString] = item[1]
       })
       console.log(marketData) // test this
 
