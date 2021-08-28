@@ -24,6 +24,9 @@
       <div id="collapse<%=index.humanize.capitalize%>" class="collapse" aria-labelledby="heading<%=index.humanize.capitalize%>" data-parent="#accordionExample">
         <div class="card-body">
           <div class="cards">
+            <% if favorite_topic.topic.coingecko_id %>
+              <%= render 'shared/chart_card', id: favorite_topic.topic.coingecko_id %>
+            <% end %>
             <% topics_tweets[favorite_topic.topic.title].each do |tweet| %>
               <%= render 'shared/tweet_card', username: tweet['user']['username'],
                                         text: tweet['text'],
