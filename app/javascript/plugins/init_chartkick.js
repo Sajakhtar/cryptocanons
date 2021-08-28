@@ -10,7 +10,6 @@ const initChartkick = () => {
       fetch(`https://api.coingecko.com/api/v3/coins/${chartEl.dataset.coingeckoId}/market_chart?vs_currency=usd&interval=daily&days=7`)
         .then(response => response.json())
         .then((data) => {
-          console.log(data.price)
           const ArrData = Array.from(data.prices)
 
           const marketData = ArrData.map((item) => {
@@ -19,7 +18,12 @@ const initChartkick = () => {
             return [dateString, item[1]];
           })
 
-          new Chartkick.LineChart(chartEl.id, marketData);
+          const flatData = marketData.flat().filter(item => typeof item === 'number');
+
+          const min = Math.round(Math.min(...flatData) - Math.min(...flatData) * 0.02)
+
+          new Chartkick.LineChart(chartEl.id, marketData, { min: min, colors: ["#518FFF"] });
+
         });
     });
   }
