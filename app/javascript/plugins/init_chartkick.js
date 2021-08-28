@@ -22,7 +22,7 @@ const initChartkick = () => {
 
           const min = Math.round(Math.min(...flatData) - Math.min(...flatData) * 0.02)
 
-          new Chartkick.LineChart(chartEl.id, marketData, { min: min, colors: ["#518FFF"] });
+          new Chartkick.LineChart(chartEl.id, marketData, { min: min, prefix: "$", colors: ["#518FFF"], thousands: "," });
 
         });
     });
