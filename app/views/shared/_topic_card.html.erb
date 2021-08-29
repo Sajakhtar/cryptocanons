@@ -1,0 +1,22 @@
+<div class="card w-100 my-1 shadow-sm"
+    data-action="click->off-canvas#display"
+    data-title=<%= favorite_topic.topic.title %>
+    data-cashtag=<%= favorite_topic.topic.cashtag %>
+    data-coingecko-id=<%= favorite_topic.topic.coingecko_id %> >
+  <div class="card-body" >
+    <%= image_tag(favorite_topic.topic.icon_url) %>
+    <strong><%= favorite_topic.topic.title.capitalize %></strong>
+    <% if favorite_topic.topic.cashtag %>
+      <%= favorite_topic.topic.cashtag %>
+    <% end %>
+
+    <% if favorite_topic.topic.coingecko_id %>
+      <br>
+      <br>
+      <div>
+        <span class="price text-secondary" data-coingecko-id="<%= favorite_topic.topic.coingecko_id %>"></span>
+        <small class=""></small>
+      </div>
+    <% end %>
+  </div>
+</div>

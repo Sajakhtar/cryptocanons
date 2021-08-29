@@ -38,3 +38,5 @@ document.addEventListener("turbolinks:load", () => {
     placeholder: "Select a topic",
   });
 });
+
+import "controllers"

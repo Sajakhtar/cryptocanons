@@ -1,11 +1,12 @@
 class FavoriteTopicsController < ApplicationController
   def index
-    @favorite_topics = FavoriteTopic.all
+    # @favorite_topics = FavoriteTopic.all
+    @favorite_topics = current_user.favorite_topics
 
-    @favorite_topics_tweets = {}
-    @favorite_topics.each do |favorite_topic|
-      @favorite_topics_tweets[favorite_topic.topic.title] = HandleTweets.new(favorite_topic.topic, 5).format_tweets
-    end
+    # @favorite_topics_tweets = {}
+    # @favorite_topics.each do |favorite_topic|
+    #   @favorite_topics_tweets[favorite_topic.topic.title] = HandleTweets.new(favorite_topic.topic, 5).format_tweets
+    # end
   end
 
   def create
@@ -27,5 +28,17 @@ class FavoriteTopicsController < ApplicationController
     @favorite_topic.destroy
 
     redirect_to favorite_topics_path
+  end
+
+  def tweets
+    topic = { title: params[:title], cashtag: params[:cashtag] }
+    @topic_tweets = HandleTweets.new(topic, 5).format_tweets
+    @coingecko_id = params[:coingecko_id]
+    # p @topic_tweets
+    p @coingecko_id
+
+    respond_to do |format|
+      format.json
+    end
   end
 end
