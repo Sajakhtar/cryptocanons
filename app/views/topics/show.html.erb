@@ -1,6 +1,7 @@
 <div class="container">
 
-  <h1 class="text-white bg-dark shadow p-2 mt-2 mb-3 rounded text-center">Searched topic: <%= @topic.title %></h1>
+  <h3 class="text-white bg-dark shadow p-2 mt-2 mb-3 rounded text-center">Search results</h3>
+  <p id="topic-show-p" class="text-center">Showing the latest and the most relevant top 5 tweets, for today, related to the topic you are interested: <strong><%= @topic.title %></strong>.</p>
 
   <div class="cards">
     <% @tweets_data.each do |tweet| %>
@@ -13,13 +14,22 @@
                                       article_url: nil %>
     <% end %>
   </div>
-
-  <div class="button-container mt-2 mb-2">
-    <button type="button" class="btn btn-primary btn-lg">
-      <%= link_to 'Add to favorites topics', favorite_topics_path %>
-    </button>
-    <button type="button" class="btn btn-ghost btn-lg">
-      <%= link_to 'Back', root_path %>
-    </button>
-  </div>
 </div>
+
+  <div class="button-container d-flex justify-content-center">
+
+    <%= link_to 'Back', root_path, class: "btn btn-ghost mr-1" %>
+
+    <% if @is_favorite %>
+      <%= link_to 'My topics',
+            favorite_topics_path,
+            class: "btn btn-secondary flex-grow-0 text-white vw-60"
+      %>
+    <% else %>
+      <%= link_to 'Add to favorites',
+            topic_favorite_topics_path(@topic.id),
+            method: :post,
+            class: "btn btn-primary flex-grow-0 text-white vw-60"
+      %>
+    <% end %>
+  </div>
