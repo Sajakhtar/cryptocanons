@@ -16,7 +16,8 @@ class FavoriteTopicsController < ApplicationController
     @favorite_topic.user = current_user
 
     if @favorite_topic.save
-      redirect_to @topic
+      flash[:alert] = "#{@topic.title} has been added to your Favorite Topics"
+      redirect_to topic_path(@topic)
     else
       render 'topic/show'
     end
