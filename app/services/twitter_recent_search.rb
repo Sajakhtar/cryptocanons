@@ -13,8 +13,8 @@ class TwitterRecentSearch
   private
 
   def build_query
-    keyword = "\"#{@topic.title}\""
-    keyword += "OR \"#{@topic.cashtag}\"" if @topic.cashtag
+    keyword = "\"#{@topic[:title]}\""
+    keyword += "OR \"#{@topic[:cashtag]}\"" if @topic[:cashtag]
     "#{keyword} lang:en is:verified -is:quote -is:retweet -is:reply (has:media OR has:links OR has:hashtags OR has:videos OR has:mentions)"
   end
 

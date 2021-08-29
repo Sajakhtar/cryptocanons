@@ -28,4 +28,14 @@ class FavoriteTopicsController < ApplicationController
 
     redirect_to favorite_topics_path
   end
+
+  def tweets
+    topic = { title: params[:title], cashtag: params[:cashtag] }
+    @topic_tweets = HandleTweets.new(topic, 5).format_tweets
+    p @topic_tweets
+
+    respond_to do |format|
+      format.json
+    end
+  end
 end

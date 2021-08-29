@@ -33,3 +33,5 @@ document.addEventListener("turbolinks:load", () => {
   initPrice();
   initChartkick();
 });
+
+import "controllers"

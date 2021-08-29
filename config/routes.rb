@@ -6,7 +6,11 @@ Rails.application.routes.draw do
     resources :favorite_topics, only: :create
   end
 
-  resources :favorite_topics, only: [:index, :destroy]
+  resources :favorite_topics, only: [:index, :destroy] do
+    collection do
+      get :tweets
+    end
+  end
 
   resources :bookmarked_articles, only: [:index, :show, :create, :destroy]
 end
