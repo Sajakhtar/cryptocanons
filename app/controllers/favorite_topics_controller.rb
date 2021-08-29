@@ -3,10 +3,10 @@ class FavoriteTopicsController < ApplicationController
     # @favorite_topics = FavoriteTopic.all
     @favorite_topics = current_user.favorite_topics
 
-    @favorite_topics_tweets = {}
-    @favorite_topics.each do |favorite_topic|
-      @favorite_topics_tweets[favorite_topic.topic.title] = HandleTweets.new(favorite_topic.topic, 5).format_tweets
-    end
+    # @favorite_topics_tweets = {}
+    # @favorite_topics.each do |favorite_topic|
+    #   @favorite_topics_tweets[favorite_topic.topic.title] = HandleTweets.new(favorite_topic.topic, 5).format_tweets
+    # end
   end
 
   def create

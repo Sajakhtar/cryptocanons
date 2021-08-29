@@ -5,9 +5,14 @@
     <% if favorite_topic.topic.cashtag %>
       <%= favorite_topic.topic.cashtag %>
     <% end %>
+
     <% if favorite_topic.topic.coingecko_id %>
-      <span class="price text-secondary" data-coingecko-id="<%= favorite_topic.topic.coingecko_id %>"></span>
-      <small class=""></small>
+      <br>
+      <br>
+      <div>
+        <span class="price text-secondary" data-coingecko-id="<%= favorite_topic.topic.coingecko_id %>"></span>
+        <small class=""></small>
+      </div>
     <% end %>
 </div>
 </div>
