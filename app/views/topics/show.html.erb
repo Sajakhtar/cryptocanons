@@ -1,7 +1,6 @@
 <div class="container">
-  <%= link_to 'Add to favorites', topic_favorite_topics_path(@topic.id), method: :post %>
 
-  <h1><%= @topic.title %></h1>
+  <h1 class="text-white bg-dark shadow p-2 mt-3 mb-3 rounded text-center">Searched topic: <%= @topic.title %></h1>
     <div class="cards">
       <% @tweets_data.each do |tweet| %>
         <%= render 'shared/tweet_card', username: tweet['user']['username'],
@@ -14,5 +13,13 @@
       <% end %>
     </div>
 
-  <%= link_to 'Back', root_path, class: 'btn btn-secondary' %>
+  <div class="button-container mt-2 mb-2">
+    <button type="button" class="btn btn-primary btn-lg">
+      <%= link_to 'Add to favorites topics', favorite_topics_path %>
+    </button>
+    <button type="button" class="btn btn-ghost btn-lg">
+      <%= link_to 'Back', root_path %>
+    </button>
+
+  </div>
 </div>
