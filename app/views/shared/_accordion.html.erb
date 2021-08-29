@@ -8,8 +8,11 @@
           <button class="btn btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse<%=index.humanize.capitalize%>" aria-expanded="true" aria-controls="collapse<%=index.humanize.capitalize%>">
             <%= image_tag(favorite_topic.topic.icon_url) %>
             <strong><%= favorite_topic.topic.title.capitalize %></strong>
+            <% if favorite_topic.topic.coingecko_id %>
+              <span class="price text-secondary" data-coingecko-id="<%= favorite_topic.topic.coingecko_id %>"></span>
+              <small class=""></small>
+            <% end %>
           </button>
-
         </h2>
 
         <%= link_to favorite_topic_path(favorite_topic), method: :delete, data: { confirm: "Are you sure?" }, class: "text-danger" do %>
@@ -21,8 +24,9 @@
       <div id="collapse<%=index.humanize.capitalize%>" class="collapse" aria-labelledby="heading<%=index.humanize.capitalize%>" data-parent="#accordionExample">
         <div class="card-body">
           <div class="cards">
-            <%# loop topics_tweets %>
-            <%# render tweet card %>
+            <% if favorite_topic.topic.coingecko_id %>
+              <%= render 'shared/chart_card', id: favorite_topic.topic.coingecko_id %>
+            <% end %>
             <% topics_tweets[favorite_topic.topic.title].each do |tweet| %>
               <%= render 'shared/tweet_card', username: tweet['user']['username'],
                                         text: tweet['text'],

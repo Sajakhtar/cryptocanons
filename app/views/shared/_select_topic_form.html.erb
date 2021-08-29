@@ -1,7 +1,7 @@
 
 <%= simple_form_for :search, method: :get do |f| %>
   <div class="d-flex">
-    <%= f.input :topic_id , collection: @topics, label: false, placeholder: 'Search' %>
+    <%= f.input :topic , collection: @topics, label: false, include_blank: false %>
     <%= f.button :submit, 'Search', class: 'search-button' %>
   </div>
 <% end %>

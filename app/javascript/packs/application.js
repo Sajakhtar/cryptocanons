@@ -19,13 +19,22 @@ ActiveStorage.start();
 
 // External imports
 import "bootstrap";
-
+import "select2";
+import "select2/dist/css/select2.css";
+import $ from "jquery";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-import { initAos } from 'plugins/init_aos';
+import { initAos } from "plugins/init_aos";
+import { initPrice } from "plugins/init_price";
+import { initChartkick } from "plugins/init_chartkick";
 
 document.addEventListener("turbolinks:load", () => {
   // Call your functions here, e.g:
   // initSelect2();
   initAos();
+  initPrice();
+  initChartkick();
+  $("#search_topic").select2({
+    placeholder: "Select a topic",
+  });
 });
