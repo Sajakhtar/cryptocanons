@@ -6,7 +6,7 @@ export default class extends Controller {
   static targets = ['graph'];
 
   connect() {
-    console.log(this.graphTarget)
+    // console.log(this.graphTarget)
     this.chartkick()
   }
 
@@ -28,6 +28,8 @@ export default class extends Controller {
 
         const min = Math.round(Math.min(...flatData) - Math.min(...flatData) * 0.02)
 
+        // console.log(marketData)
+        // console.log(min)
         new Chartkick.LineChart(chartEl.id, marketData, { min: min, prefix: "$", colors: ["#518FFF"], thousands: "," });
 
       })

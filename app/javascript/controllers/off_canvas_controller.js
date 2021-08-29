@@ -29,7 +29,6 @@ export default class extends Controller {
     fetch(`/favorite_topics/tweets?title=${title}&cashtag=${cashtag}&coingecko_id=${coingeckoId}`)
       .then(response => response.json())
       .then((data) => {
-        // console.log(data)
         // console.log(data.chart)
         let tweetsHTML = coingeckoId ? data.chart : ''
         data.tweets.forEach((tweetHTML) => {
