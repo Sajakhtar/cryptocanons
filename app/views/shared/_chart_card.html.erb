@@ -1,10 +1,16 @@
 <div class="card w-100 my-1 shadow-sm" data-controller="chart">
-  <div class="d-flex mt-2 ml-2">
-    <button class="btn btn-outline-primary btn-sm mr-1" data-chart-target='button' data-action="click->chart#display" data-timeframe="365" data-index="0">1Y</button>
-    <button class="btn btn-outline-primary btn-sm mr-1" data-chart-target='button' data-action="click->chart#display" data-timeframe="182" data-index="1">6M</button>
-    <button class="btn btn-outline-primary btn-sm mr-1" data-chart-target='button' data-action="click->chart#display" data-timeframe="90" data-index="2">3M</button>
-    <button class="btn btn-outline-primary btn-sm mr-1" data-chart-target='button' data-action="click->chart#display" data-timeframe="30" data-index="3">1M</button>
-    <button class="btn btn-outline-primary btn-sm" data-chart-target='button' data-action="click->chart#display" data-timeframe="7" data-index="4">7D</button>
+  <div class="d-flex justify-content-between align-items-start">
+    <div class="d-flex mt-2 ml-2">
+      <button class="btn btn-outline-primary btn-sm mr-1" data-chart-target='button' data-action="click->chart#display" data-timeframe="365" data-change="1Y" data-index="0">1Y</button>
+      <button class="btn btn-outline-primary btn-sm mr-1" data-chart-target='button' data-action="click->chart#display" data-timeframe="182" data-change="6M" data-index="1">6M</button>
+      <button class="btn btn-outline-primary btn-sm mr-1" data-chart-target='button' data-action="click->chart#display" data-timeframe="90" data-change="3M" data-index="2">3M</button>
+      <button class="btn btn-outline-primary btn-sm mr-1" data-chart-target='button' data-action="click->chart#display" data-timeframe="30" data-change="1M" data-index="3">1M</button>
+      <button class="btn btn-outline-primary btn-sm" data-chart-target='button' data-action="click->chart#display" data-timeframe="7" data-change="7D" data-index="4">7D</button>
+    </div>
+    <div class="mt-2 mr-2 text-right">
+      <p class="mb-0" data-chart-target='price'></p>
+      <small data-chart-target='delta'></small>
+    </div>
   </div>
   <div class="card-body chart" id="<%= coingecko_id %>" data-coingecko-id="<%= coingecko_id %>" data-chart-target="graph">
   </div>
