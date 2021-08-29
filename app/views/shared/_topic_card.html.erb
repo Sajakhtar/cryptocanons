@@ -1,7 +1,8 @@
 <div class="card w-100 my-1 shadow-sm"
     data-action="click->off-canvas#display"
     data-title=<%= favorite_topic.topic.title %>
-    data-cashtag=<%= favorite_topic.topic.cashtag %> >
+    data-cashtag=<%= favorite_topic.topic.cashtag %>
+    data-coingecko-id=<%= favorite_topic.topic.coingecko_id %> >
   <div class="card-body" >
     <%= image_tag(favorite_topic.topic.icon_url) %>
     <strong><%= favorite_topic.topic.title.capitalize %></strong>
