@@ -25,12 +25,15 @@ export default class extends Controller {
     fetch(`/favorite_topics/tweets?title=${title}&cashtag=${cashtag}`)
       .then(response => response.json())
       .then((data) => {
-        console.log(data)
+        // console.log(data)
+        let tweetsHTML = ''
         data.forEach((tweetHTML) => {
           if (tweetHTML) {
-            this.tweetsTarget.insertAdjacentHTML("beforeend", tweetHTML['tweet']);
+            // this.tweetsTarget.insertAdjacentHTML("beforeend", tweetsHTML);
+            tweetsHTML += tweetHTML['tweet']
           }
         })
+        this.tweetsTarget.innerHTML = tweetsHTML;
       })
 
   }
