@@ -1,4 +1,7 @@
 <h3 class="text-white bg-dark shadow p-2 mb-3 rounded text-center">My Topics</h3>
 <div class="container">
-  <%= render 'shared/accordion', favorite_topics: @favorite_topics, topics_tweets: @favorite_topics_tweets %>
+  <%#= render 'shared/accordion', favorite_topics: @favorite_topics, topics_tweets: @favorite_topics_tweets %>
+  <% @favorite_topics.each do |favorite_topic| %>
+    <%= render 'shared/topic_card', favorite_topic: favorite_topic %>
+  <% end %>
 </div>
