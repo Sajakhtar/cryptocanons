@@ -41,11 +41,11 @@
 }
 
 .btn-primary {
-  background-color: #4472CA !important;
-  border-color: #4472CA !important;
+  background-color: $btn-blue;
+  border-color: $btn-border;
 }
 
 .btn-primary:hover {
-  background-color: #0A369D !important;
-  border-color: #0A369D !important;
+  background-color: $btn-hover-blue;
+  border-color: $btn-hover-border;
 }
