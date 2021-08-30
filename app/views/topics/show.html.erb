@@ -1,39 +1,40 @@
 <div class="container">
-
-  <h3 class="text-white bg-dark shadow p-2 mt-2 mb-3 rounded text-center">Search results</h3>
-  <p id="topic-show-p" class="text-center">Showing the latest and the most relevant top 5 tweets, for today, related to the topic you are interested: <strong><%= @topic.title %></strong>.</p>
-
-  <div class="cards">
-    <% @tweets_data.each do |tweet| %>
-      <%= render 'shared/tweet_partial', tweet: tweet %>
-
-      <%# <%= render 'shared/tweet_card', username: tweet['user']['username'],
-                                      text: tweet['text'],
-                                      tweet_id: tweet['id'],
-                                      followers: tweet['user']['public_metrics']['followers_count'],
-                                      tweet_url: tweet['tweet_url'],
-                                      image_url: nil,
-                                      article_url: nil %>
-    <% end %>
+  <div class="d-flex">
+    <div>
+      <h1 class="topic-heading"><%= @topic.title %></h1>
+      <p class="topic-p">Viewing latest tweets about <%= @topic.title %></p>
+    </div>
+    <div>
+      <p class="price topic-price" data-coingecko-id="<%= @topic.coingecko_id %>"></p>
+      <p class=""></p>
+    </div>
   </div>
+
+
+    <div class="margin-top-50 space-bottom">
+      <% @tweets_data.each do |tweet| %>
+        <%= render 'shared/tweet_partial', tweet: tweet %>
+      <% end %>
+    </div>
+  </div>
+
+    <div class="button-container d-flex flex-column justify-content-center" data-controller="off-canvas">
+
+      <% if @is_favorite %>
+        <%= link_to 'My topics',
+              favorite_topics_path,
+              class: "btn bg-white text-dark"
+        %>
+      <% else %>
+        <%= link_to 'Add to favorites',
+              topic_favorite_topics_path(@topic.id),
+              method: :post,
+              class: "btn bg-white text-dark"
+        %>
+      <% end %>
+
+      <%#= link_to 'Back', root_path, class: "btn btn-secondary mt-3" %>
+      <button class="btn btn-secondary mt-3" data-action="click->off-canvas#search">Search Topic</button>
+      <%= render 'shared/search_canvas', topics: @topics %>
+    </div>
 </div>
-
-  <div class="button-container d-flex flex-column justify-content-center" data-controller="off-canvas">
-
-    <% if @is_favorite %>
-      <%= link_to 'My topics',
-            favorite_topics_path,
-            class: "btn bg-white text-dark"
-      %>
-    <% else %>
-      <%= link_to 'Add to favorites',
-            topic_favorite_topics_path(@topic.id),
-            method: :post,
-            class: "btn bg-white text-dark"
-      %>
-    <% end %>
-
-    <%#= link_to 'Back', root_path, class: "btn btn-secondary mt-3" %>
-    <button class="btn btn-secondary mt-3" data-action="click->off-canvas#search">Search Topic</button>
-    <%= render 'shared/search_canvas', topics: @topics %>
-  </div>
