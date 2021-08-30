@@ -17,6 +17,13 @@ export default class extends Controller {
   }
 
   display(event) {
+
+    this.buttonTargets.forEach((btn) => {
+      btn.classList.remove('active')
+    })
+
+    event.currentTarget.classList.add('active')
+
     const timeFrame = parseInt(event.currentTarget.dataset.timeframe)
 
     let start = moment().subtract(timeFrame, 'days').unix() * 1000
@@ -48,31 +55,6 @@ export default class extends Controller {
       this.deltaTarget.classList.remove("text-success")
       this.deltaTarget.classList.add("text-danger")
     }
-
-    // if(endPrice > startPrice) {
-    //   ApexCharts.exec('prices', 'updateOptions', {
-    //     colors: ['#329932'],
-    //     chart: {
-    //       zoom: {
-    //         enabled: true,
-    //         type: 'x',
-    //         autoScaleYaxis: false
-    //       },
-    //     }
-    //   })
-    // } else {
-    //   ApexCharts.exec('prices', 'updateOptions', {
-    //     colors: ['#FF3232'],
-    //     chart: {
-    //       zoom: {
-    //         enabled: true,
-    //         type: 'x',
-    //         autoScaleYaxis: false
-    //       },
-    //     }
-    //   })
-    // }
-
   }
 
   callCoingecko = () => {
@@ -82,6 +64,8 @@ export default class extends Controller {
       .then((data) => {
         priceData = Array.from(data.prices)
         this.drawGraph(priceData)
+
+        this.buttonTargets[0].classList.add('active')
 
         const start = moment().subtract(365, 'days').unix() * 1000
         const end = moment().unix() * 1000
