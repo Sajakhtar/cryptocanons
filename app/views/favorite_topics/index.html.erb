@@ -1,10 +1,12 @@
 <h1 class="topic-card-heading margin-top-30 text-center">My Topics</h1>
 <%# <div class="blue-line"></div> %>
 <p class="topic-card-subheading text-center">Favorite Topics you follow</p>
-<div class="button-container d-flex flex-column justify-content-center">
-  <%= link_to 'Back', root_path, class: "btn bg-white text-dark" %>
-</div>
 
+<div data-controller="off-canvas">
+  <div class="button-container d-flex flex-column justify-content-center">
+    <%#= link_to 'Back', root_path, class: "btn bg-white text-dark" %>
+    <button class="btn bg-white text-dark" data-action="click->off-canvas#search">Search Topic</button>
+  </div>
   <div class="container">
     <div class="cards">
       <% @favorite_topics.each do |favorite_topic| %>
