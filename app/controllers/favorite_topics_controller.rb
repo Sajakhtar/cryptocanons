@@ -2,6 +2,7 @@ class FavoriteTopicsController < ApplicationController
   def index
     # @favorite_topics = FavoriteTopic.all
     @favorite_topics = current_user.favorite_topics
+    @topics = Topic.all
 
     # @favorite_topics_tweets = {}
     # @favorite_topics.each do |favorite_topic|
