@@ -6,7 +6,7 @@ const initSelect = () => {
   $("#search_topic").select2({
     placeholder: "Select a topic",
   });
-  console.log($("#search_topic"))
+  // console.log($("#search_topic"))
 
 }
 
