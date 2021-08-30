@@ -1,0 +1,68 @@
+.topic-cards {
+  border: 1px solid #5b616e33;
+  position: relative;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.crypto-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 18px;
+  // margin-top: 10px;
+  // margin-left: 10px;
+}
+
+.crypto-title {
+  font-size: 20px;
+  font-weight: 500;
+  margin-right: 18px;
+}
+
+.topic-card-info {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.cashtag {
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.topic-card-price {
+  font: 16px;
+  font-weight: 500;
+  font-family: $headers-font;
+  margin-top: 40px;
+  margin-left: 56px;
+}
+
+.crypto-press {
+  position: absolute;
+  right: 30px;
+  top: 30%;
+  font-size: 36px;
+  color: $blue;
+}
+
+.topic-card-heading {
+  font-size: 34px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.topic-card-subheading {
+  font-size: 14px;
+  font-weight: 400;
+  color: #5b616e;
+  margin-bottom: 30px;
+}
+
+.blue-line {
+  height: 15px;
+  background: $blue;
+  width: 200px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: -25px;
+}
