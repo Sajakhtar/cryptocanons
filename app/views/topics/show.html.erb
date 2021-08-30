@@ -1,11 +1,12 @@
 <div class="container">
-  <div class="d-flex">
+  <div>
     <div>
       <h1 class="topic-heading"><%= @topic.title %></h1>
       <p class="topic-p">Viewing latest tweets about <%= @topic.title %></p>
     </div>
-    <div>
-      <p class="price topic-price" data-coingecko-id="<%= @topic.coingecko_id %>"></p>
+    <div class="d-flex mt-4">
+      <p class="mr-2">Current price: </p>
+      <p class="price topic-price m-0 mr-2" data-coingecko-id="<%= @topic.coingecko_id %>"></p>
       <p class=""></p>
     </div>
   </div>
