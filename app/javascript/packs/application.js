@@ -38,8 +38,6 @@ document.addEventListener("turbolinks:load", () => {
   // $("#search_topic").select2({
   //   placeholder: "Select a topic",
   // });
-
+  initSelect()
   initPrice()
 });
-
-initSelect()

@@ -3,12 +3,11 @@ import "select2/dist/css/select2.css";
 import $ from "jquery";
 
 const initSelect = () => {
-  window.addEventListener('DOMContentLoaded',() => {
-    $("#search_topic").select2({
-      placeholder: "Select a topic",
-    });
-    console.log($("#search_topic"))
-  })
+  $("#search_topic").select2({
+    placeholder: "Select a topic",
+  });
+  console.log($("#search_topic"))
+
 }
 
 export { initSelect }
