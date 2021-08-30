@@ -1,4 +1,4 @@
-<div class="margin-top-50">
+<div class="margin-top-50 main">
   <%= image_tag 'main.svg' %>
   <div class="container">
     <h1 class="margin-top-50 main-h1">Find all of your crypto news in one place</h1>
@@ -12,5 +12,43 @@
 <div class="container margin-top-120 secondary">
   <h1>Discover the latest crypto news right from your phone</h1>
   <p>The most up-to-date news directly from Twitter including the current price and charts</p>
-  <%= image_tag 'phone.jpg', class: 'phone' %>
+  <%= image_tag 'phone.jpg', class: 'center-image margin-top-50', data: { aos: "zoom-in" } %>
+</div>
+
+<div class="container margin-top-120 body">
+  <div class="info-box" data-aos="fade-down">
+    <%= image_tag 'home-body-1.svg', class: 'center-image margin-top-40' %>
+    <h2 class="text-center margin-top-40">Discover latest topics from the best</h2>
+    <p class="text-center">Receive tweets from the most knowledgable people in crypto</p>
+  </div>
+</div>
+
+<div class="container margin-top-50 body">
+  <div class="info-box" data-aos="fade-down">
+    <%= image_tag 'home-body-2.svg', class: 'center-image margin-top-40' %>
+    <h2 class="text-center margin-top-40">Major coins and tokens represented</h2>
+    <p class="text-center">Find the best information even for the most obscure coins.</p>
+  </div>
+</div>
+
+<div class="container margin-top-50 body">
+  <div class="info-box" data-aos="fade-down">
+    <%= image_tag 'home-body-3.svg', class: 'center-image margin-top-40' %>
+    <h2 class="text-center margin-top-40">Save your favorite topics and view them anytime</h2>
+    <p class="text-center">View all of your saved topics on a single beautifull display</p>
+  </div>
+</div>
+
+<div class="margin-top-120 quick-stats text-center">
+  <h2>200+ coins</h2>
+  <h2 class="margin-top-50">Prices and trends</h2>
+  <h2 class="margin-top-50">Freshest tweets</h2>
+</div>
+
+<div class=" container margin-top-120 cta text-center">
+  <h2 class="text-center center-image">Get started in a few minutes</h2>
+  <p class="margin-top-50">100% Satisfaction Guaranteed</p>
+  <p class="margin-top-30">24/7 Support</p>
+  <p class="margin-top-30">4+ Satisfied Customers</p>
+  <%= link_to 'Sign Up Now', new_user_registration_path, class: 'btn search-button margin-top-50'  %>
 </div>
