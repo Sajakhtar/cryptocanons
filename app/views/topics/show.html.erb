@@ -16,20 +16,20 @@
   </div>
 </div>
 
-  <div class="button-container d-flex justify-content-center">
-
-    <%= link_to 'Back', root_path, class: "btn btn-ghost mr-1" %>
+  <div class="button-container d-flex flex-column justify-content-center">
 
     <% if @is_favorite %>
       <%= link_to 'My topics',
             favorite_topics_path,
-            class: "btn btn-secondary flex-grow-0 text-white vw-60"
+            class: "btn bg-white text-dark"
       %>
     <% else %>
       <%= link_to 'Add to favorites',
             topic_favorite_topics_path(@topic.id),
             method: :post,
-            class: "btn btn-primary flex-grow-0 text-white vw-60"
+            class: "btn bg-white text-dark"
       %>
     <% end %>
+
+    <%= link_to 'Back', root_path, class: "btn btn-secondary mt-3" %>
   </div>
