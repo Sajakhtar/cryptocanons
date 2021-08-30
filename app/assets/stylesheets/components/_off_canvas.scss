@@ -11,6 +11,20 @@
   background-color: white;
   overflow: scroll;
 }
+
+.off-canvas hr {
+  width: 60%;
+  margin-left: 0;
+  height: 1px;
+  margin-top: 10px;
+  background: $blue;
+}
+
+.search-p {
+  font-size: 14px;
+  color: #5B616E;
+}
+
 .off-canvas.is-moved {
   transform: translateX(0px);
   box-shadow: 0 0 10px black;
