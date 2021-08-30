@@ -16,7 +16,7 @@
   </div>
 </div>
 
-  <div class="button-container d-flex flex-column justify-content-center">
+  <div class="button-container d-flex flex-column justify-content-center" data-controller="off-canvas">
 
     <% if @is_favorite %>
       <%= link_to 'My topics',
@@ -31,5 +31,7 @@
       %>
     <% end %>
 
-    <%= link_to 'Back', root_path, class: "btn btn-secondary mt-3" %>
+    <%#= link_to 'Back', root_path, class: "btn btn-secondary mt-3" %>
+    <button class="btn btn-secondary mt-3" data-action="click->off-canvas#search">Search Topic</button>
+    <%= render 'shared/search_canvas', topics: @topics %>
   </div>
