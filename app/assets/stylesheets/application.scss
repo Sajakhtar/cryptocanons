@@ -12,10 +12,10 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
-@import "utilities/index";
+// @import "utilities/index";
 
 .white-text {
-  color: white;
+  color: white !important;
 }
 
 .yellow-button {
