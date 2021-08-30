@@ -5,11 +5,13 @@
   <%= link_to 'Back', root_path, class: "btn bg-white text-dark" %>
 </div>
 
-<div class="container" data-controller="off-canvas">
-  <div class="cards">
-    <% @favorite_topics.each do |favorite_topic| %>
-      <%= render 'shared/topic_card', favorite_topic: favorite_topic %>
-    <% end %>
+  <div class="container">
+    <div class="cards">
+      <% @favorite_topics.each do |favorite_topic| %>
+        <%= render 'shared/topic_card', favorite_topic: favorite_topic %>
+      <% end %>
+    </div>
+    <%= render 'shared/search_canvas', topics: @topics %>
+    <%= render 'shared/off_canvas' %>
   </div>
-  <%= render 'shared/off_canvas' %>
 </div>
