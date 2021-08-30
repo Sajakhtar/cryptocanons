@@ -1,0 +1,102 @@
+.footer-home .copyright img {
+  width: 20px;
+  color: white;
+}
+
+.footer-home {
+  background: $blue;
+  display: block;
+  color: $light-gray;
+  margin-top: 60px;
+}
+
+.footer-widgets {
+  padding: 60px 20px 20px;
+}
+
+.footer-home-container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.footer-home a,
+.footer-home .social-icons > li > a {
+  color: gray
+}
+
+
+.footer-bar p {
+  margin-bottom: 0;
+}
+
+.widget {
+  margin-bottom: 30px;
+  font-size: 1.2rem;
+}
+
+.widget ul {
+  margin-bottom: 0;
+}
+
+// .widget .widget-title {
+//   margin-bottom: 24px;
+// }
+
+.widget .widget-title > h6 {
+  text-transform: uppercase;
+  letter-spacing: 2.6px;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 24px;
+}
+
+.footer-widgets + .footer-bar {
+  border-top: 1px solid gray;
+}
+
+.footer-bar {
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 22px 0;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1.5rem;
+  // margin-top: 20px;
+  padding-top: 20px;
+}
+
+.social-icons > li {
+  display: inline-block;
+  margin: 0 20px 0 0;
+}
+
+.widget ul, ol {
+    list-style: none;
+    padding-left: 0;
+}
+
+.textwidget p {
+  border-bottom: 1px solid gray;
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+
+.footer-home a {
+  transition: all .3s ease-in-out;
+}
