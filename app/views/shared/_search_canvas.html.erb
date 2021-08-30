@@ -1,13 +1,17 @@
 <div class="off-canvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" data-off-canvas-target="search">
   <div class="offcanvas-header">
-    <div class="d-flex justify-content-between">
-      <h5 class="offcanvas-title">Search Topic</h5>
+    <div class="d-flex justify-content-end">
       <i class="far fa-times-circle" data-action="click->off-canvas#hideSearch"></i>
     </div>
   </div>
   <div class="offcanvas-body">
     <div class="d-flex justify-content-center align-items-center" style="height: 90vh;">
-      <%= render 'shared/select_topic_form' %>
+      <div class="bg-white p-5 rounded">
+        <h5 class="offcanvas-title text-primary">Search Topic</h5>
+        <hr>
+        <p class="search-p mb-5">Search amongst 200 top cryptocurrencies to find the latest curated tweets and prices</p>
+        <%= render 'shared/select_topic_form' %>
+      </div>
     </div>
   </div>
 </div>
