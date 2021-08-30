@@ -1,21 +1,31 @@
-<div class="card w-100 my-1 shadow-sm">
+<div class="card w-100 my-3 shadow-sm">
   <div class="card-body">
-    <div class="d-flex">
+    <div class="d-flex justify-content-between align-items-center mb-2">
       <h5 class="card-title pr-2">@<%= tweet['user']['username'] %> </h5>
       <small class="text-secondary"><%= number_to_human(tweet['user']['public_metrics']['followers_count'], units: { thousand: 'K', million: 'M' }) %> Followers </small>
     </div>
     <p class="card-text"><%= tweet['text'] %></p>
-    <ul class="d-flex justify-content-around p-0">
-      <li class="list-unstyled">
-        <%= link_to tweet['tweet_url'], target: '_blank' do %>
-          <i class="fab fa-twitter"></i>
-        <% end %>
-      </li>
-      <li class="list-unstyled">
-        <%= link_to bookmarked_articles_path(tweet: {username: tweet['user']['username'], text: tweet['text'], followers: tweet['user']['public_metrics']['followers_count'], tweet_id: tweet['id']}), method: :post do %>
-          <i class="far fa-bookmark"></i>
-        <% end %>
-      </li>
-    </ul>
+  </div>
+
+  <div class="d-flex">
+
+    <%= link_to bookmarked_articles_path(tweet: {
+          username: tweet['user']['username'],
+          text: tweet['text'],
+          followers: tweet['user']['public_metrics']['followers_count'],
+          tweet_id: tweet['id']
+          }),
+        method: :post,
+        class: 'btn btn-ghost not-rounded' do
+    %>
+      <i class="far fa-bookmark"></i>
+      <p>Bookmark tweet</p>
+    <% end %>
+
+    <%= link_to tweet['tweet_url'], target: '_blank', class: 'btn btn-primary not-rounded flex-grow-1' do %>
+      <i class="fab fa-twitter"></i>
+      <p>Go to tweet</p>
+    <% end %>
+
   </div>
 </div>

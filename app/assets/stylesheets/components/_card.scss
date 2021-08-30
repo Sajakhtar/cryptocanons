@@ -5,6 +5,46 @@
   position: relative;
 }
 
+.card {
+  overflow: hidden;
+}
+
+.card-body {
+  // justify-content: space-between;
+  // align-items: center;
+  // margin-bottom: 1rem;
+}
+
+.card-body p {
+  font-size: 16px;
+}
+
+.card-title {
+  font-size: 18px;
+  margin-bottom: 0px;
+}
+
+.card-body small {
+  font-size: 12px
+}
+
+.card i {
+  font-size: 12px;
+}
+.card a {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  justify-content: center;
+  border-bottom-left-radius: 4px !important;
+  p {
+    margin-bottom: 0;
+    padding-left: 4px;
+    font-size: 12px;
+  }
+}
+
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
