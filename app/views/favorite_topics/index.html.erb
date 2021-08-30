@@ -1,8 +1,19 @@
-<h3 class="text-white bg-dark shadow p-2 mb-3 rounded text-center">My Topics</h3>
-<div class="container" data-controller="off-canvas">
-  <%#= render 'shared/accordion', favorite_topics: @favorite_topics, topics_tweets: @favorite_topics_tweets %>
-  <% @favorite_topics.each do |favorite_topic| %>
-    <%= render 'shared/topic_card', favorite_topic: favorite_topic %>
-  <% end %>
-  <%= render 'shared/off_canvas' %>
+<h1 class="topic-card-heading margin-top-30 text-center">My Topics</h1>
+<%# <div class="blue-line"></div> %>
+<p class="topic-card-subheading text-center">Favorite Topics you follow</p>
+
+<div data-controller="off-canvas">
+  <div class="button-container d-flex flex-column justify-content-center">
+    <%#= link_to 'Back', root_path, class: "btn bg-white text-dark" %>
+    <button class="btn bg-white text-dark" data-action="click->off-canvas#search">Search Topic</button>
+  </div>
+  <div class="container">
+    <div class="cards">
+      <% @favorite_topics.each do |favorite_topic| %>
+        <%= render 'shared/topic_card', favorite_topic: favorite_topic %>
+      <% end %>
+    </div>
+    <%= render 'shared/search_canvas', topics: @topics %>
+    <%= render 'shared/off_canvas' %>
+  </div>
 </div>

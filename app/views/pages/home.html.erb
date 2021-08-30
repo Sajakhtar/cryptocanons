@@ -1,64 +1,55 @@
-<div class="px-4 py-5" style="background: #324574;">
+<div class="margin-top-50 main">
+  <%= image_tag 'main.svg' %>
   <div class="container">
-    <h1 class="home-h1 mb-4 roboto">All your crypto news, in one place</h1>
-    <%= render 'shared/select_topic_form' %>
-  </div>
-</div>
-
-<div class="container mt-5">
-  <div class="text-center">
-    <h5 class="m-4">Keep up to date with crypto news from the best sources</h5>
-    <%= image_tag 'home-tweet.png', class: 'home-image-tweet', data: {aos: "zoom-in"} %>
-  </div>
-</div>
-
-<div class="text-center mt-5 py-5" style="background: #324574;">
-  <div class="container">
-    <h5 class="white-text">See the latest trends!</h5>
-    <h5 class="white-text mt-3">Live traking for all your favorite coins</h5>
-    <%= image_tag 'homepage-btc(1).png', class: 'chart-image', data: {aos: "zoom-in"} %>
-    <%= image_tag 'homepage-eth(1).png', data: {aos: "zoom-in"}%>
-  </div>
-</div>
-
-<div class="container my-5">
-  <div class="title-review" style="width: 300px;">
-    <h5>The best place to get everything crypto.</h5>
-    <h5>Don't believe us? Just take a look at what some of our satisfied customers have to say:</h5>
-  </div>
-  <div class="review-card m-4">
-    <div class="d-flex align-items-center">
-      <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: 'avatar' %>
-      <p class="m-0 ml-2">Sébastien Saunier</p>
-    </div>
-    <p class="my-4 text-left">The best crypto related product I have ever used. I used to know nothing about this space but after spending a few months on CryptoCanons I now like to consider myself an expert. Definitely recommend!</p>
-    <div class="text-left" style="color: #f9f871;">
-    <% 5.times do %>
-      <i class="fas fa-star"></i>
-    <% end %>
+    <h1 class="margin-top-50 main-h1">Find all of your crypto news in one place</h1>
+    <p class="main-p">CryptoCanons is your best source of everything crypto</p>
+    <div class="margin-top-30">
+      <%= render 'shared/select_topic_form' %>
     </div>
   </div>
 </div>
 
-<div class="container p-4" style="background: #324574;">
-  <h5 class="white-text text-center">What you can expect:</h5>
-  <% @tweets_data.each do |tweet| %>
-    <div class="my-3" data-aos="fade-left">
-      <%= render 'shared/tweet_card', username: tweet['user']['username'],
-                                      text: tweet['text'],
-                                      tweet_id: tweet['id'],
-                                      followers: tweet['user']['public_metrics']['followers_count'],
-                                      tweet_url: tweet['tweet_url'],
-                                      image_url: nil,
-                                      article_url: nil %>
-    </div>
-  <% end %>
+<div class="container margin-top-120 secondary">
+  <h1>Discover the latest crypto news right from your phone</h1>
+  <p>The most up-to-date news directly from Twitter including the current price and charts</p>
+  <%= image_tag 'phone.jpg', class: 'center-image margin-top-50', data: { aos: "zoom-in" } %>
 </div>
 
-<div class="container mt-5">
-  <h3>So what are you waiting for? Join now and experience the best crypto news on the internet</h3>
-  <div class="text-center my-5">
-    <%= link_to "Join Now!", new_user_registration_path, class: "yellow-button" %>
+<div class="container margin-top-120 body">
+  <div class="info-box" data-aos="fade-down">
+    <%= image_tag 'home-body-1.svg', class: 'center-image margin-top-40' %>
+    <h2 class="text-center margin-top-40">Discover latest topics from the best</h2>
+    <p class="text-center">Receive tweets from the most knowledgable people in crypto</p>
   </div>
+</div>
+
+<div class="container margin-top-50 body">
+  <div class="info-box" data-aos="fade-down">
+    <%= image_tag 'home-body-2.svg', class: 'center-image margin-top-40' %>
+    <h2 class="text-center margin-top-40">Major coins and tokens represented</h2>
+    <p class="text-center">Find the best information even for the most obscure coins.</p>
+  </div>
+</div>
+
+<div class="container margin-top-50 body">
+  <div class="info-box" data-aos="fade-down">
+    <%= image_tag 'home-body-3.svg', class: 'center-image margin-top-40' %>
+    <h2 class="text-center margin-top-40">Save your favorite topics and view them anytime</h2>
+    <p class="text-center">View all of your saved topics on a single beautifull display</p>
+  </div>
+</div>
+
+<div class="margin-top-120 quick-stats text-center">
+  <h2>200+ coins</h2>
+  <h2 class="margin-top-50">Prices and trends</h2>
+  <h2 class="margin-top-50">Freshest tweets</h2>
+</div>
+
+<div class=" container margin-top-120 cta text-center">
+  <h2 class="text-center center-image">Get started in a few minutes</h2>
+  <p class="margin-top-50">100% Satisfaction Guaranteed</p>
+  <p class="margin-top-30">24/7 Support</p>
+  <p class="margin-top-30">4+ Satisfied Customers</p>
+  <%= link_to 'Sign Up Now', new_user_registration_path, class: 'btn search-button margin-top-50'  %>
 </div>
 <%= render 'shared/footer_home' %>

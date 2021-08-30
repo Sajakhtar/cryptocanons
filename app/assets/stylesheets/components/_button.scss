@@ -12,8 +12,8 @@
 }
 
 .btn-secondary {
-  background-color: #008B6A !important;
-  border-color: #008B6A !important;
+  background-color: #5B616E !important;
+  border-color: #5B616E !important;
 }
 
 
@@ -22,12 +22,26 @@
   border: 1px solid #0032EB !important;
   border-radius: 5px;
   padding: 8px 24px;
-  font-weight: lighter;
+  font-weight: 500;
   opacity: 0.6;
   transition: opacity 0.3s ease;
 }
 
 .btn-ghost:hover {
+  opacity: 1;
+}
+
+.btn-ghost-del {
+  color: #E7001F !important;
+  border: 1px solid $light-gray !important;
+  border-radius: 5px;
+  padding: 8px 24px;
+  font-weight: 500;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.btn-ghost-del:hover {
   opacity: 1;
 }
 
@@ -63,13 +77,15 @@
   // display: flex;
   // justify-content: space-between;
   position: fixed;
-  bottom: 0px;
-  background-color: white;
+  bottom: -1px;
+  background-color:$blue;
   width: 100%;
-  border: 1px solid white;
+  // border: 1px solid white;
   opacity: 1 !important;
   z-index: 1000;
   margin: 0;
-  padding: 20px;
-  box-shadow: 0px 12px 20px black;
+  // padding: 20px;
+  padding: 24px 20px 22px 20px;
+  // box-shadow: 0px 12px 20px black;
+  border-radius: 20px 20px 0 0;
 }
