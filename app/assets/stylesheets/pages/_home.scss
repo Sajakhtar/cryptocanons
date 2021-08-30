@@ -1,26 +1,103 @@
-// Specific CSS for your home-page
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+.margin-top-50 {
+  margin-top: 50px;
+}
 
-.home-h1 {
-  color: white;
-  font-size: 30px !important;
-  font-weight: 400;
+.margin-top-30 {
+  margin-top: 30px;
+}
+
+.margin-top-40 {
+  margin-top: 40px;
+}
+
+.margin-top-120 {
+  margin-top: 120px;
+}
+
+.main {
+  .main-h1 {
+    font-size: 34px;
+    font: $headers-font;
+    font-weight: 500;
+    line-height: 40px;
+    margin-bottom: 10px;
+  }
+
+  .main-p {
+    font: $body-font;
+  }
 }
 
 .search-button {
-  background: #f9f871;
-  height: 2.4rem;
+  background: $blue;
+  width: 100%;
+  color: white;
 }
 
-.home-image-tweet {
-  margin-left: 15px;
+.secondary {
+  h1 {
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 46px;
+    margin-bottom: 20px;
+  }
+
+  p {
+    color: #5b616e;
+    line-height: 20px;
+  }
 }
 
-.roboto {
-  font-family: "Roboto", sans-serif !important;
+.center-image {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
-.chart-image {
-  margin-bottom: -70px;
-  width: 85%;
+.info-box {
+  border: 1px solid #5b616e33;
+  border-radius: 4px;
+}
+
+.body {
+  h2 {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 20px;
+    margin-bottom: 20px;
+  }
+  p {
+    color: #5b616e;
+    font-weight: 400;
+    line-height: 25px;
+    width: 250;
+    margin-bottom: 30px;
+  }
+}
+
+.quick-stats {
+  background: $blue;
+  color: white;
+  padding-top: 70px;
+  padding-bottom: 70px;
+
+  h2 {
+    font-size: 38px;
+    line-height: 50px;
+    font-weight: 500;
+  }
+}
+
+.cta {
+  h2 {
+    font-size: 34px;
+    line-height: 40px;
+    font-weight: 500;
+    width: 250px;
+  }
+
+  p {
+    font-weight: 400;
+    line-height: 25px;
+  }
 }
