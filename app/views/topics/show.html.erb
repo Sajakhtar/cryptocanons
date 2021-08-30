@@ -5,7 +5,9 @@
 
   <div class="cards">
     <% @tweets_data.each do |tweet| %>
-      <%= render 'shared/tweet_card', username: tweet['user']['username'],
+      <%= render 'shared/tweet_partial', tweet: tweet %>
+
+      <%# <%= render 'shared/tweet_card', username: tweet['user']['username'],
                                       text: tweet['text'],
                                       tweet_id: tweet['id'],
                                       followers: tweet['user']['public_metrics']['followers_count'],

@@ -1,9 +1,52 @@
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 8px;
+  grid-gap: 32px;
   position: relative;
   padding-bottom: 15vh;
+}
+
+.card {
+  overflow: hidden;
+}
+
+.card-body {
+  // justify-content: space-between;
+  // align-items: center;
+  // margin-bottom: 1rem;
+}
+
+.card-body p {
+  font-size: 16px;
+}
+
+.card-title {
+  font-size: 18px;
+  margin-bottom: 0px;
+}
+
+.card-body small {
+  font-size: 12px
+}
+
+.card i {
+  font-size: 12px;
+}
+.card a {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  justify-content: center;
+
+  p {
+    margin-bottom: 0;
+    padding-left: 4px;
+    font-size: 12px;
+  }
+}
+
+.card .btn-ghost {
+  border-bottom-left-radius: 4px !important;
 }
 
 // Smallest device
