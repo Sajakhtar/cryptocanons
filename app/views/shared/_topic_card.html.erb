@@ -13,8 +13,8 @@
     </div>
     <div>
       <% if favorite_topic.topic.coingecko_id %>
-        <div class="topic-card-price d-flex">
-          <p class="price mr-2" data-coingecko-id="<%= favorite_topic.topic.coingecko_id %>"></p>
+        <div class="topic-card-price d-flex align-items-center">
+          <p class="price mr-2 topic-price" data-coingecko-id="<%= favorite_topic.topic.coingecko_id %>"></p>
           <p class=""></p>
         </div>
       <% end %>
