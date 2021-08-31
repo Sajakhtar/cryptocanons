@@ -7,16 +7,6 @@
       <i class="far fa-times-circle" data-action="click->off-canvas#hide"></i>
     </div>
 
-    <%= link_to favorite_topics_path(favorite_topic),
-        method: :delete,
-        remote: true,
-        class: "btn-topic-del d-flex btn-sm mb-1 pl-8",
-        data: { confirm: 'Are you sure?' } do
-    %>
-        <p>Delete</p>
-        <i id="trash-topic" class="fas fa-trash"></i>
-    <% end %>
-
   </div>
   <div class="offcanvas-body" data-off-canvas-target="tweets">
     <div class="d-flex justify-content-center align-items-center" style="height: 90vh;">
