@@ -16,15 +16,15 @@
 
 .main {
   .main-h1 {
-    font-size: 34px;
-    font: $headers-font;
-    font-weight: 500;
-    line-height: 40px;
+    font-size: 35px;
+    font-weight: 600;
+    line-height: 46px;
     margin-bottom: 10px;
   }
 
   .main-p {
     font: $body-font;
+    color: #5b616e;
   }
 }
 
@@ -44,7 +44,7 @@
 
   p {
     color: #5b616e;
-    line-height: 20px;
+    line-height: 25px;
   }
 }
 
@@ -57,6 +57,20 @@
 .info-box {
   border: 1px solid #5b616e33;
   border-radius: 4px;
+  padding-left: 30px;
+  padding-right: 20px;
+  position: relative;
+
+  .tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white;
+    background: $blue;
+    padding: 5px 10px;
+    border-radius: 50px;
+    font-weight: 500;
+  }
 }
 
 .body {
@@ -99,5 +113,11 @@
   p {
     font-weight: 400;
     line-height: 25px;
+    padding-left: 40px;
+  }
+
+  i {
+    color: $blue;
+    font-size: 18px;
   }
 }
