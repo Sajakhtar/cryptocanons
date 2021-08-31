@@ -11,6 +11,23 @@
 }
 
 .topic-price {
-  margin-top: 15px;
   margin-bottom: 0;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.current-price {
+  position: fixed;
+  top: 0;
+}
+
+.price-card {
+  border: 1px solid #0052ff4d;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0px 0px 15px -8px #5b616e;
+  p {
+    margin: 0;
+  }
 }
