@@ -16,10 +16,12 @@ class HandleTweets
   private
 
   def top_tweets(tweets, users)
+    tweets.select! { |tweet| tweet['lang'] == 'en' }
+    tweets.select! { |tweet| tweet['possibly_sensitive'] == false }
+
     tweets.map! do |tweet|
       author = users.find { |user| user['id'] == tweet['author_id'] }
       tweet['user'] = author
-
       if tweet['user']["public_metrics"]["followers_count"] > 1000
         tweet['tweet_url'] = "https://twitter.com/#{tweet['user']['username']}/status/#{tweet['id']}"
       else
