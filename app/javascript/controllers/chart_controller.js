@@ -13,29 +13,44 @@ export default class extends Controller {
   static targets = ['graph', 'button', 'price', 'delta'];
 
   connect() {
-    this.callCoingecko()
+    this.activeButton(0)
+    this.callCoingecko("daily", 366).then(() => {
+
+      this.drawGraph(priceData)
+    })
   }
+
+
 
   display(event) {
 
-    this.buttonTargets.forEach((btn) => {
-      btn.classList.remove('active')
-    })
-
-    event.currentTarget.classList.add('active')
+    const buttonIndex = parseInt(event.currentTarget.dataset.index)
+    this.activeButton(buttonIndex)
 
     const timeFrame = parseInt(event.currentTarget.dataset.timeframe)
+
+
+    if(timeFrame === 1) {
+      // console.log(timeFrame, "minutely")
+      this.callCoingecko("minutely", timeFrame).then(() => {
+        this.updateGraph(priceData)
+      })
+    } else if (timeFrame === 7) {
+      // console.log(timeFrame, "hourly")
+      this.callCoingecko("hourly", timeFrame).then(() => {
+        this.updateGraph(priceData)
+      })
+    } else {
+      // console.log(timeFrame, "daily")
+      this.callCoingecko("daily", timeFrame).then(() => {
+        this.updateGraph(priceData)
+      })
+    }
 
     let start = moment().subtract(timeFrame, 'days').unix() * 1000
     if(start < priceData[0][0]) {
       start = priceData[0][0]
     }
-    const end = moment().unix() * 1000
-
-    chart.zoomX(
-      start,
-      end
-    )
 
     let startPrice = priceData[0][1]
     if(start) {
@@ -57,18 +72,31 @@ export default class extends Controller {
     }
   }
 
-  callCoingecko = () => {
+  updateGraph = (prices) => {
+    // console.log(prices)
+    ApexCharts.exec('prices', 'updateOptions', {
+      series: [
+        {
+          name: "Price",
+          data: prices,
+        }
+      ]
+    })
+  }
+
+  callCoingecko = async (interval, timeFrame) => {
     const chartEl = this.graphTarget
-    fetch(`https://api.coingecko.com/api/v3/coins/${chartEl.dataset.coingeckoId}/market_chart?vs_currency=usd&interval=daily&days=366`)
+    await fetch(`https://api.coingecko.com/api/v3/coins/${chartEl.dataset.coingeckoId}/market_chart?vs_currency=usd&interval=${interval}&days=${timeFrame}`)
       .then(response => response.json())
       .then((data) => {
         priceData = Array.from(data.prices)
-        this.drawGraph(priceData)
+        // console.log(priceData)
+        // this.drawGraph(priceData)
 
-        this.buttonTargets[0].classList.add('active')
+        // this.buttonTargets[0].classList.add('active')
 
-        const start = moment().subtract(365, 'days').unix() * 1000
-        const end = moment().unix() * 1000
+        // const start = moment().subtract(365, 'days').unix() * 1000
+        // const end = moment().unix() * 1000
 
         const startPrice = priceData[0][1]
         const endPrice = priceData[priceData.length - 1][1]
@@ -83,7 +111,6 @@ export default class extends Controller {
           this.deltaTarget.classList.remove("text-success")
           this.deltaTarget.classList.add("text-danger")
         }
-
       })
   }
 
@@ -171,6 +198,12 @@ export default class extends Controller {
     })
 
 
+  }
+
+  activeButton = (index) => {
+    this.buttonTargets.forEach((el, i) => {
+      el.classList.toggle('active', index === i )
+    })
   }
 
 }
