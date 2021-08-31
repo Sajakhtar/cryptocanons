@@ -14,8 +14,8 @@ class TwitterRecentSearch
 
   def build_query
     keyword = "\"#{@topic[:title]}\""
-    keyword += "OR \"#{@topic[:cashtag]}\"" if @topic[:cashtag]
-    "#{keyword} lang:en is:verified -is:quote -is:retweet -is:reply (has:media OR has:links OR has:hashtags OR has:videos OR has:mentions)"
+    keyword = "(\"#{@topic[:title]}\" OR \"#{@topic[:cashtag]}\")" if @topic[:cashtag]
+    "#{keyword} lang:en is:verified"
   end
 
   def get_query_params(query)
@@ -27,7 +27,7 @@ class TwitterRecentSearch
       "expansions": "attachments.poll_ids,attachments.media_keys,author_id",
       "tweet.fields": "attachments,author_id,conversation_id,created_at,entities,id,lang,public_metrics,source,text,context_annotations,possibly_sensitive,withheld,geo,referenced_tweets",
       "user.fields": "name,location,description,public_metrics,url,username,verified,withheld,protected,profile_image_url",
-      "media.fields": "url"
+      # "media.fields": "url"
       # "place.fields": "country_code",
       # "poll.fields": "options"
     }
