@@ -1,19 +1,22 @@
-
-const title = "<%= @topic.title %>"
-console.log(title, 'outer')
-<%#= raise %>
-const tweet_id = "<%= @bookmarked_article.tweet_id %>"
-
-const replaceTweet = (tweet_id, outerHTML) => {
+var replaceTweet = (tweet_id, outerHTML) => {
   const tweetCards = document.querySelectorAll('.card')
   tweetCards.forEach((tweetCard) => {
     const cardTweetId = tweetCard.dataset.tweetId
     if(cardTweetId === tweet_id) {
-      console.log(tweetCard)
       tweetCard.outerHTML = outerHTML
     }
   })
 
 }
 
-replaceTweet(tweet_id, ' <%= j render partial: "shared/tweet_bookmark", locals: { tweet: @bookmarked_article } %>')
+var alertMessage = (outerHTML) => {
+  document.insertAdjacentHTML('beforeend', outerHTML)
+}
+
+
+<% if @bookmarked_article.persisted? %>
+  var tweet_id = "<%= @bookmarked_article.tweet_id %>"
+  replaceTweet(tweet_id, ' <%= j render partial: "shared/tweet_bookmark", locals: { tweet: @bookmarked_article } %>')
+<% else %>
+  alertMessage( <%= j render partial: "shared/flashes", locals: { notice: @bookmarked_article.errors } %>')
+<% end %>
