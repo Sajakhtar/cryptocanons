@@ -1,25 +1,24 @@
 .btn-primary {
-  background-color: #0052FF !important;
-  border-color: #0052FF !important;
+  background-color: #0052ff !important;
+  border-color: #0052ff !important;
   border-radius: 5px;
   font-weight: lighter;
-  color:white !important;
+  color: white !important;
 }
 
 .btn-primary:hover {
-  background-color: #0A369D !important;
-  border-color: #0A369D !important;
+  background-color: #0a369d !important;
+  border-color: #0a369d !important;
 }
 
 .btn-secondary {
-  background-color: #5B616E !important;
-  border-color: #5B616E !important;
+  background-color: #5b616e !important;
+  border-color: #5b616e !important;
 }
 
-
 .btn-ghost {
-  color: #0032EB !important;
-  border: 1px solid #0032EB !important;
+  color: #0032eb !important;
+  border: 1px solid #0032eb !important;
   border-radius: 5px;
   padding: 8px 24px;
   font-weight: 500;
@@ -32,7 +31,7 @@
 }
 
 .btn-ghost-del {
-  color: #E7001F !important;
+  color: #e7001f !important;
   border: 1px solid $light-gray !important;
   border-radius: 5px;
   padding: 8px 24px;
@@ -46,8 +45,8 @@
 }
 
 .btn-topic-del {
-  color: #E7001F !important;
-  border: 1px solid #E7001F !important;
+  color: #e7001f !important;
+  border: 1px solid #e7001f !important;
   border-radius: 5px;
   padding: 4px 18px;
   font-weight: 400;
@@ -73,13 +72,13 @@
   padding: 8px 24px;
   border-radius: 4px;
   font-weight: bold;
-  background: linear-gradient(#167FFB, #0F60C4);
+  background: linear-gradient(#167ffb, #0f60c4);
   transition: background 0.3s ease;
-  border: 1px solid #0F60C4;
+  border: 1px solid #0f60c4;
 }
 
 .btn-gradient:hover {
-  background: linear-gradient(#147EFF, #0F67DA);
+  background: linear-gradient(#147eff, #0f67da);
   color: white;
 }
 
@@ -88,7 +87,7 @@
   // justify-content: space-between;
   position: fixed;
   bottom: -1px;
-  background-color:$blue;
+  background-color: $blue;
   width: 100%;
   // border: 1px solid white;
   opacity: 1 !important;
@@ -102,8 +101,12 @@
 
 .delete-link {
   position: absolute;
-  top: -5vh;
-  left: -16vw;
+  top: -4vh;
+  left: -4vw;
   color: red;
-  font-size: 14px;
+  font-size: 16px;
+  border: 1px solid red;
+  border-radius: 4px;
+  margin-top: 5px;
+  margin-left: 20px;
 }
