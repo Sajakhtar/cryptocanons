@@ -15,6 +15,8 @@
   color: #5b616e;
   border: 1px solid #5b616e33;
   height: 50px;
+  background: white;
+  width: 100%;
 }
 
 .button-border {
@@ -23,4 +25,36 @@
 
 .space-bottom {
   padding-bottom: 20vh;
+}
+
+.tweet-button {
+  background: $blue;
+  color: white;
+  border-radius: 0px 0px 4px 0px;
+  font-size: 16px;
+  height: 50px;
+  width: 50%;
+}
+
+.bookmarked-button {
+  color: #5b616e;
+  height: 50px;
+  border-top: 1px solid #5b616e33;
+  border-radius: 0px 0px 0px 4px;
+  font-size: 16px !important;
+  width: 50%;
+  text-align: center;
+  justify-content: center;
+}
+
+.tweet-button-position {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.form {
+  form {
+    width: 50%;
+  }
 }

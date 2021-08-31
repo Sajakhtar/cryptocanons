@@ -8,11 +8,15 @@
       <button class="btn btn-outline-primary btn-sm mr-1" data-chart-target='button' data-action="click->chart#display" data-timeframe="7" data-change="7D" data-index="4">7D</button>
       <button class="btn btn-outline-primary btn-sm" data-chart-target='button' data-action="click->chart#display" data-timeframe="1" data-change="1D" data-index="5">1D</button>
     </div>
-    <div class="mt-2 mr-2 text-right">
+    <div class="mt-2 mr-2 text-right chart-price">
       <p class="mb-0" data-chart-target='price'></p>
       <small data-chart-target='delta'></small>
     </div>
   </div>
   <div class="card-body chart" id="<%= coingecko_id %>" data-coingecko-id="<%= coingecko_id %>" data-chart-target="graph", data-bookmarks="<%= bookmarks.to_json %>">
   </div>
+</div>
+
+<div class="margin-top-30 margin-bottom-30 text-center ">
+  <i class="fas fa-chevron-down cool-icon"></i>
 </div>
