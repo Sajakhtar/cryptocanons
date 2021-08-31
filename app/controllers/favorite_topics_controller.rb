@@ -32,6 +32,7 @@ class FavoriteTopicsController < ApplicationController
   end
 
   def tweets
+    @topic = Topic.find(params[:topic_id])
     topic = { title: params[:title], cashtag: params[:cashtag] }
     @topic_tweets = HandleTweets.new(topic, 5).format_tweets
     @coingecko_id = params[:coingecko_id]

@@ -2,7 +2,8 @@
     data-action="click->off-canvas#display"
     data-title=<%= favorite_topic.topic.title %>
     data-cashtag=<%= favorite_topic.topic.cashtag %>
-    data-coingecko-id=<%= favorite_topic.topic.coingecko_id %> >
+    data-coingecko-id=<%= favorite_topic.topic.coingecko_id %>
+    data-topic-id=<%= favorite_topic.topic.id %> >
   <div>
     <div class="d-flex topic-card-info">
       <%= image_tag(favorite_topic.topic.icon_url, class: 'crypto-icon') %>

@@ -9,7 +9,7 @@
 
   <div class="d-flex">
 
-    <%= link_to bookmarked_articles_path(tweet: {
+    <%# <%= link_to  topic_bookmarked_articles_path(topic: topic, tweet: {
           username: tweet['user']['username'],
           text: tweet['text'],
           followers: tweet['user']['public_metrics']['followers_count'],
@@ -18,8 +18,17 @@
         method: :post,
         class: 'btn bookmark-button not-rounded' do
     %>
-      <i class="far fa-bookmark"></i>
-      <p>Bookmark tweet</p>
+
+    <%= simple_form_for [topic, BookmarkedArticle.new], remote: true do |f| %>
+      <%= f.input :username, as: :hidden, input_html: { value: tweet['user']['username']} %>
+      <%= f.input :text, as: :hidden, input_html: { value: tweet['text']} %>
+      <%= f.input :followers, as: :hidden, input_html: { value: tweet['user']['public_metrics']['followers_count']} %>
+      <%= f.input :tweet_id, as: :hidden, input_html: { value: tweet['id']} %>
+
+      <%= button_tag type: 'submit', class: 'btn bookmark-button not-rounded d-flex align-items-center' do %>
+        <i class="far fa-bookmark mr-1"></i>
+        <p>Bookmark tweet</p>
+      <% end %>
     <% end %>
 
     <%= link_to tweet['tweet_url'], target: '_blank', class: 'btn search-button button-border not-rounded flex-grow-1 white-text' do %>

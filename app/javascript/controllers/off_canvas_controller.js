@@ -11,9 +11,10 @@ export default class extends Controller {
     const title = event.currentTarget.dataset.title
     const cashtag = event.currentTarget.dataset.cashtag
     const coingeckoId = event.currentTarget.dataset.coingeckoId
+    const topicId = event.currentTarget.dataset.topicId
     this.titleTarget.innerText = title
     // console.log(cashtag)
-    this.handleTweets(title, cashtag, coingeckoId)
+    this.handleTweets(title, cashtag, coingeckoId, topicId)
   }
 
   hide() {
@@ -31,10 +32,10 @@ export default class extends Controller {
     this.searchTarget.classList.remove('is-moved')
   }
 
-  handleTweets = (title, cashtag, coingeckoId) => {
+  handleTweets = (title, cashtag, coingeckoId, topicId) => {
     // console.log(title, cashtag)
 
-    fetch(`/favorite_topics/tweets?title=${title}&cashtag=${cashtag}&coingecko_id=${coingeckoId}`)
+    fetch(`/favorite_topics/tweets?title=${title}&cashtag=${cashtag}&coingecko_id=${coingeckoId}&topic_id=${topicId}`)
       .then(response => response.json())
       .then((data) => {
         // console.log(data.chart)
