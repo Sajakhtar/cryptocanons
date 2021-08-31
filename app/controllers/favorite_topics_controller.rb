@@ -3,6 +3,7 @@ class FavoriteTopicsController < ApplicationController
     # @favorite_topics = FavoriteTopic.all
     @favorite_topics = current_user.favorite_topics
     @topics = Topic.all
+    # @favorite_topic = current_user.favorite_topics.find(params[:favorite_topic])
 
     # @favorite_topics_tweets = {}
     # @favorite_topics.each do |favorite_topic|
@@ -37,6 +38,7 @@ class FavoriteTopicsController < ApplicationController
     @topic_tweets = HandleTweets.new(topic, 5).format_tweets
     @coingecko_id = params[:coingecko_id]
     @bookmarks = current_user.bookmarked_articles.where(topic: @topic)
+    @favorite_topic_to_delete = current_user.favorite_topics.where(topic: @topic).first
     # p @topic_tweets
     # p @coingecko_id
 

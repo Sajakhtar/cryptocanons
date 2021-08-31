@@ -1,4 +1,7 @@
 <div class="card w-100 my-1 shadow-sm" data-controller="chart">
+
+  <%= link_to "Delete", favorite_topic_path(favorite_topic), method: :delete, remote: true, class: "delete-link" %>
+
   <div class="d-flex justify-content-between align-items-start">
     <div class="d-flex mt-2 ml-2">
       <button class="btn btn-outline-primary btn-sm mr-1" data-chart-target='button' data-action="click->chart#display" data-timeframe="365" data-change="1Y" data-index="0">1Y</button>
