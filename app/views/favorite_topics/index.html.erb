@@ -1,11 +1,14 @@
-<h1 class="topic-card-heading margin-top-30 text-left p-2">My Topics</h1>
-<%# <div class="blue-line"></div> %>
-<p class="topic-card-subheading text-left p-2">Favorite Topics you follow</p>
+
+<div class="container">
+  <h1 class="topic-card-heading margin-top-30">My Topics</h1>
+  <p class="topic-card-subheading">Favorite Topics you <span class="blue-text">follow</span></p>
+</div>
+
 
 <div data-controller="off-canvas">
   <div class="button-container d-flex flex-column justify-content-center">
     <%#= link_to 'Back', root_path, class: "btn bg-white text-dark" %>
-    <button class="btn bg-white text-dark" data-action="click->off-canvas#search">Search Topic</button>
+    <button class="btn bg-white text-dark search-button-mytopics" data-action="click->off-canvas#search">Search Topic</button>
   </div>
   <div class="container">
     <div class="cards">

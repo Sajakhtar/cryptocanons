@@ -3,7 +3,8 @@
   position: relative;
   margin-bottom: 20px;
   cursor: pointer;
-  height: 120px;
+  height: 160px;
+  border-radius: 6px;
 }
 
 .crypto-icon {
@@ -21,8 +22,8 @@
 }
 
 .topic-card-info {
-  margin-top: 10px;
-  margin-left: 10px;
+  margin-top: 20px;
+  margin-left: 20px;
 }
 
 .cashtag {
@@ -31,11 +32,14 @@
 }
 
 .topic-card-price {
-  font: 16px;
+  font: 20px !important;
   font-weight: 500;
   font-family: $headers-font;
   margin-top: 40px;
   margin-left: 56px;
+  p {
+    margin-bottom: 0;
+  }
 }
 
 .crypto-press {

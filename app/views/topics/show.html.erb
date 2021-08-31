@@ -2,10 +2,10 @@
   <div>
     <div>
       <h1 class="topic-heading"><%= @topic.title %></h1>
-      <p class="topic-p">Viewing latest tweets about <%= @topic.title %></p>
+      <p class="topic-p">Viewing latest tweets about <span class="blue-text"><%= @topic.title %></span></p>
     </div>
-    <div class="d-flex mt-4">
-      <p class="mr-2">Current price: </p>
+    <p class="margin-top-50 mb-0">Current Price</p>
+    <div class="price-card">
       <p class="price topic-price m-0 mr-2" data-coingecko-id="<%= @topic.coingecko_id %>"></p>
       <p class=""></p>
     </div>
@@ -14,7 +14,7 @@
 
     <div class="margin-top-50 space-bottom">
       <% @tweets_data.each do |tweet| %>
-        <%= render 'shared/tweet_partial', tweet: tweet %>
+        <%= render 'shared/tweet_partial', tweet: tweet, topic: @topic %>
       <% end %>
     </div>
   </div>

@@ -10,13 +10,14 @@ class BookmarkedArticlesController < ApplicationController
   end
 
   def create
+    @topic = Topic.find(params[:topic_id])
     @bookmarked_article = BookmarkedArticle.new(strong_params)
     @bookmarked_article.user = current_user
-    if @bookmarked_article.save
-      redirect_to bookmarked_articles_path
+    @bookmarked_article.topic = @topic
+    @bookmarked_article.save
 
-    else
-      render root_path
+    respond_to do |format|
+      format.js
     end
   end
 
@@ -30,6 +31,6 @@ class BookmarkedArticlesController < ApplicationController
   private
 
   def strong_params
-    params.require(:tweet).permit(:username, :text, :tweet_id, :followers)
+    params.require(:bookmarked_article).permit(:username, :text, :tweet_id, :followers)
   end
 end
