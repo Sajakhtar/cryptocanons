@@ -89,6 +89,7 @@ export default class extends Controller {
 
 
   drawGraph = (prices) => {
+
     var options = {
       chart: {
         id: "prices",
@@ -140,10 +141,36 @@ export default class extends Controller {
       grid: {
         show: false,
       },
+      annotations: {
+        xaxis: this.annotateGraph()
+      }
     };
 
     chart = new ApexCharts(this.graphTarget, options);
 
     chart.render();
   }
+
+  annotateGraph = () => {
+    const bookmarks = JSON.parse(this.graphTarget.dataset.bookmarks)
+    // console.log(bookmarks)
+
+    return bookmarks.map((bookmark) => {
+      return {
+        x: new Date(bookmark.created_at).getTime(),
+        borderColor: '#fff001',
+        label: {
+          style: {
+            color: '#000',
+            background: '#fff001',
+            opacity: 0.3,
+          },
+          text: bookmark.username
+        }
+      }
+    })
+
+
+  }
+
 }

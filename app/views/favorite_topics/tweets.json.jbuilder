@@ -1,4 +1,4 @@
-json.chart json.partial!('shared/chart_card.html.erb', coingecko_id: @coingecko_id)
+json.chart json.partial!('shared/chart_card.html.erb', coingecko_id: @coingecko_id, bookmarks: @bookmarks)
 
 
 json.tweets do

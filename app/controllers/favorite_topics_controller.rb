@@ -36,8 +36,9 @@ class FavoriteTopicsController < ApplicationController
     topic = { title: params[:title], cashtag: params[:cashtag] }
     @topic_tweets = HandleTweets.new(topic, 5).format_tweets
     @coingecko_id = params[:coingecko_id]
+    @bookmarks = current_user.bookmarked_articles.where(topic: @topic)
     # p @topic_tweets
-    p @coingecko_id
+    # p @coingecko_id
 
     respond_to do |format|
       format.json
