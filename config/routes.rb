@@ -7,6 +7,8 @@ Rails.application.routes.draw do
       get :search
     end
     resources :favorite_topics, only: :create
+
+    resources :bookmarked_articles, only: :create
   end
 
   resources :favorite_topics, only: [:index, :destroy] do
@@ -15,5 +17,5 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :bookmarked_articles, only: [:index, :show, :create, :destroy]
+  resources :bookmarked_articles, only: [:index, :show, :destroy]
 end

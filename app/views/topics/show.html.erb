@@ -14,7 +14,7 @@
 
     <div class="margin-top-50 space-bottom">
       <% @tweets_data.each do |tweet| %>
-        <%= render 'shared/tweet_partial', tweet: tweet %>
+        <%= render 'shared/tweet_partial', tweet: tweet, topic: @topic %>
       <% end %>
     </div>
   </div>
