@@ -1,12 +1,19 @@
 
+const title = "<%= @topic.title %>"
+console.log(title, 'outer')
+<%#= raise %>
+const tweet_id = "<%= @bookmarked_article.tweet_id %>"
 
-const replaceTweet = () => {
-  console.log("from create js")
+const replaceTweet = (tweet_id, outerHTML) => {
+  const tweetCards = document.querySelectorAll('.card')
+  tweetCards.forEach((tweetCard) => {
+    const cardTweetId = tweetCard.dataset.tweetId
+    if(cardTweetId === tweet_id) {
+      console.log(tweetCard)
+      tweetCard.outerHTML = outerHTML
+    }
+  })
 
 }
-replaceTweet()
 
-const title = "<%= @topic.title %>"
-
-const text = "<%= @bookmarked_article.text %>"
-console.log(text)
+replaceTweet(tweet_id, ' <%= j render partial: "shared/tweet_bookmark", locals: { tweet: @bookmarked_article } %>')
