@@ -25,6 +25,11 @@
   .main-p {
     font: $body-font;
     color: #5b616e;
+    line-height: 25px;
+  }
+
+  span {
+    color: $blue;
   }
 }
 
@@ -63,13 +68,18 @@
 
   .tag {
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 15px;
+    left: 30px;
     color: white;
     background: $blue;
-    padding: 5px 10px;
-    border-radius: 50px;
+    padding: 2px 7px;
+    border-radius: 5px;
     font-weight: 500;
+    font-size: 12px;
+  }
+
+  h2 {
+    line-height: 28px !important;
   }
 }
 
@@ -92,13 +102,22 @@
 .quick-stats {
   background: $blue;
   color: white;
-  padding-top: 70px;
-  padding-bottom: 70px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 
   h2 {
     font-size: 38px;
     line-height: 50px;
     font-weight: 500;
+  }
+
+  p {
+    background: white;
+    color: $blue;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-size: 20px;
+    display: inline;
   }
 }
 
@@ -119,5 +138,6 @@
   i {
     color: $blue;
     font-size: 18px;
+    margin-right: 5px;
   }
 }
