@@ -38,6 +38,7 @@ class FavoriteTopicsController < ApplicationController
     @topic_tweets = HandleTweets.new(topic, 5).format_tweets
     @coingecko_id = params[:coingecko_id]
     @bookmarks = current_user.bookmarked_articles.where(topic: @topic)
+    @favorite_topic_to_delete = current_user.favorite_topics.where(topic: @topic).first
     # p @topic_tweets
     # p @coingecko_id
 
