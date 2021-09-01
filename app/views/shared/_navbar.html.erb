@@ -12,20 +12,20 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item active">
-          <%= link_to "My topics", favorite_topics_path, class: "nav-link border border-secondary rounded text-center text-secondary mx-1 my-1 bg-white nav-filled" %>
+          <%= link_to "My topics", favorite_topics_path, class: "nav-link border border-primary rounded text-center text-white mx-1 my-1 bg-primary nav-filled" %>
         </li>
-        <li class="nav-item active">
-          <%= link_to "Bookmarks", bookmarked_articles_path, class: "nav-link border border-secondary rounded text-center text-secondary mx-1 my-1 bg-white nav-filled" %>
+        <%# <li class="nav-item active">
+          <%= link_to "Bookmarks", bookmarked_articles_path, class: "nav-link border border-primary rounded text-center text-primary mx-1 my-1 bg-white nav-filled" %>
         </li>
         <li class="nav-item">
           <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "nav-link border border-secondary rounded text-center mx-1 my-1 bg-transparent text-secondary" %>
         </li>
       <% else %>
         <li class="nav-item">
-          <%= link_to "Sign up", new_user_registration_path, class: "nav-link border border-secondary rounded text-center text-secondary mx-1 my-1 bg-white nav-filled" %>
+          <%= link_to "Sign up", new_user_registration_path, class: "nav-link border border-primary rounded text-center text-white mx-1 my-1 bg-primary nav-filled" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Sign in", new_user_session_path, class: "nav-link border border-secondary rounded text-center mx-1 my-1 bg-transparent text-secondary" %>
+          <%= link_to "Sign in", new_user_session_path, class: "nav-link border border-primary rounded text-center mx-1 my-1 bg-transparent text-primary" %>
         </li>
       <% end %>
     </ul>
