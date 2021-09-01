@@ -4,7 +4,7 @@
     <p class="bookmark-id"><%= tweet.id %></p>
     <div class="d-flex justify-content-between align-items-center mb-3 mt-4">
       <h5 class="card-title pr-2">@<%= tweet.username %> </h5>
-      <small class="text-secondary"><%= number_to_human(tweet.followers, units: { thousand: 'K', million: 'M' }) %> Followers </small>
+      <small class="followers"><%= number_to_human(tweet.followers, units: { thousand: 'K', million: 'M' }) %> Followers </small>
     </div>
     <p class="card-text"><%= tweet.text %></p>
   </div>

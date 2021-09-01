@@ -97,20 +97,22 @@
 
 .bookmarked-icon {
   font-size: 40px;
-  color: $blue;
+  color: $yellow;
   position: absolute;
   top: 0;
 }
 
 .accordion-title {
-  color: white;
+  font-size: 20px;
+  color: black;
 }
 
 .white-bg {
-  background: $blue !important;
+  background: $yellow !important;
 }
 
 .icon-font {
   font-size: 20px;
   margin-bottom: 0;
+  color: black;
 }
