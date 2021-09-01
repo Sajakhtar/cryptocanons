@@ -2,7 +2,7 @@
   <div class="card-body">
     <i class="fas fa-bookmark bookmarked-icon"></i>
     <p class="bookmark-id"><%= tweet.id %></p>
-    <div class="d-flex justify-content-between align-items-center mb-3 mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3 mt-5">
       <h5 class="card-title pr-2">@<%= tweet.username %> </h5>
       <small class="followers"><%= number_to_human(tweet.followers, units: { thousand: 'K', million: 'M' }) %> Followers </small>
     </div>
@@ -10,13 +10,7 @@
   </div>
 
   <div class="d-flex">
-    <div class="bookmarked-button d-flex align-items-center">
-      <i class="fas fa-check"></i>
-      <p class="m-0 ml-1">Bookmarked</p>
-    </div>
-
-
-    <%= link_to "https://twitter.com/#{tweet.username}/status/#{tweet.tweet_id}", target: '_blank', class: 'tweet-button' do %>
+    <%= link_to "https://twitter.com/#{tweet.username}/status/#{tweet.tweet_id}", target: '_blank', class: 'tweet-button w-100' do %>
       <i class="fab fa-twitter"></i>
     <p class="white-text">Go to tweet</p>
     <% end %>
