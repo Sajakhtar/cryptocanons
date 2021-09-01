@@ -1,4 +1,4 @@
-var replaceTweet = (tweet_id, outerHTML) => {
+var replaceTweet = (topic_id, tweet_id, outerHTML) => {
   const tweetCards = document.querySelectorAll('.card')
   tweetCards.forEach((tweetCard) => {
     const cardTweetId = tweetCard.dataset.tweetId
@@ -6,6 +6,15 @@ var replaceTweet = (tweet_id, outerHTML) => {
       tweetCard.outerHTML = outerHTML
     }
   })
+
+  const bookmarkTag = document.getElementById(`bookmark-tag-${topic_id}`)
+  const bookmarkCount = parseInt(bookmarkTag.innerText) + 1
+  bookmarkTag.innerText = bookmarkCount
+  bookmarkTag.parentElement.style.opacity = 1
+
+  const accordionTitle = document.querySelector('.accordion-title')
+  const plural = bookmarkCount > 1 ? 'bookmarks' : 'bookmark'
+  accordionTitle.innerText = `${bookmarkCount} ${plural}`
 
 }
 
@@ -16,7 +25,8 @@ var alertMessage = (outerHTML) => {
 
 <% if @bookmarked_article.persisted? %>
   var tweet_id = "<%= @bookmarked_article.tweet_id %>"
-  replaceTweet(tweet_id, ' <%= j render partial: "shared/tweet_bookmark", locals: { tweet: @bookmarked_article } %>')
+  var topic_id = "<%= @bookmarked_article.topic.id %>"
+  replaceTweet(topic_id, tweet_id, ' <%= j render partial: "shared/tweet_bookmark", locals: { tweet: @bookmarked_article } %>')
 <% else %>
   alertMessage( <%= j render partial: "shared/flashes", locals: { notice: @bookmarked_article.errors } %>')
 <% end %>

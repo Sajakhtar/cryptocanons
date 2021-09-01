@@ -14,9 +14,10 @@
           <h2 class="cashtag mb-0"><%= favorite_topic.topic.cashtag %></h2>
         <% end %>
       </div>
+      <% opacity = bookmarks_count.positive? ? 1 : 0 %>
       <div class="d-flex align-items-center justify-content-center text-yellow position-absolute"
-          style="font-size:13px; top: -2px; right: 20vw;">
-        <h2 class="position-absolute text-dark" style="font-size:16px"><%= bookmarks_count %></h2>
+          style="font-size:13px; top: -2px; right: 20vw; opacity:<%= opacity %>">
+        <h2 class="position-absolute text-dark" id="bookmark-tag-<%= favorite_topic.topic.id %>"  style="font-size:16px;"><%= bookmarks_count %></h2>
         <i class="fas fa-bookmark" style="font-size: 38px;"></i>
       </div>
     </div>
