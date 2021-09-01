@@ -1,7 +1,7 @@
 import { Controller } from "stimulus";
 
 export default class extends Controller {
-  static targets = ['canva', 'title', 'tweets', 'search'];
+  static targets = ['canva', 'title', 'tweets', 'search', 'bookmarks'];
 
   connect() {
   }
@@ -38,8 +38,9 @@ export default class extends Controller {
     fetch(`/favorite_topics/tweets?title=${title}&cashtag=${cashtag}&coingecko_id=${coingeckoId}&topic_id=${topicId}`)
       .then(response => response.json())
       .then((data) => {
-        // console.log(data.chart)
+        console.log(data.bookmarks)
         let tweetsHTML = coingeckoId ? data.chart : ''
+        tweetsHTML += data.bookmarks
         data.tweets.forEach((tweetHTML) => {
           if (tweetHTML) {
             tweetsHTML += tweetHTML['tweet']

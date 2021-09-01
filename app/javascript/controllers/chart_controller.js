@@ -192,7 +192,7 @@ export default class extends Controller {
             background: '#fff001',
             opacity: 0.3,
           },
-          text: bookmark.username
+          text: `${bookmark.id}`
         }
       }
     })
