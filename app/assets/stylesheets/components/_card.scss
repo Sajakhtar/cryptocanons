@@ -14,7 +14,7 @@
 }
 
 .card-title {
-  font-size: 18px;
+  font-size: 20px;
   margin-bottom: 0px;
 }
 
@@ -93,4 +93,11 @@
 .cool-icon {
   font-size: 24px !important;
   color: $blue;
+}
+
+.bookmarked-icon {
+  font-size: 30px;
+  color: $blue;
+  position: absolute;
+  top: 0;
 }
