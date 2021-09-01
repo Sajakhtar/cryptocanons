@@ -1,0 +1,22 @@
+
+<div class="accordion mb-2" id="accordionExample">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          <%= pluralize bookmarks.count, "bookmark" %>
+        </button>
+      </h2>
+    </div>
+
+    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+      <div class="card-body">
+        <div class="cards">
+          <% bookmarks.each do |article| %>
+            <%= render 'shared/tweet_bookmark.html.erb', tweet: article %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
