@@ -13,7 +13,7 @@
   <div class="container">
     <div class="cards">
       <% @favorite_topics.each do |favorite_topic| %>
-        <%= render 'shared/topic_card', favorite_topic: favorite_topic %>
+        <%= render 'shared/topic_card', favorite_topic: favorite_topic.first, bookmarks_count: favorite_topic.last %>
       <% end %>
     </div>
     <%= render 'shared/search_canvas', topics: @topics %>

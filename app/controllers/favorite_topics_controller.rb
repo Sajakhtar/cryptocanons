@@ -3,6 +3,11 @@ class FavoriteTopicsController < ApplicationController
     # @favorite_topics = FavoriteTopic.all
     @favorite_topics = current_user.favorite_topics
     @topics = Topic.all
+    @favorite_topics = @favorite_topics.map do |topic|
+      bookmark_size = current_user.bookmarked_articles.where(topic: topic).size
+      [topic, bookmark_size]
+    end
+
     # @favorite_topic = current_user.favorite_topics.find(params[:favorite_topic])
 
     # @favorite_topics_tweets = {}

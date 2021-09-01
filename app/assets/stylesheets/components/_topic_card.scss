@@ -3,9 +3,12 @@
   position: relative;
   margin-bottom: 20px;
   cursor: pointer;
-  height: 160px;
-  border-radius: 6px;
+  border-radius: 4px;
+  display: flex;
+  padding: 15px;
 }
+
+
 
 .crypto-icon {
   width: 24px;
@@ -21,22 +24,15 @@
   margin-right: 18px;
 }
 
-.topic-card-info {
-  margin-top: 20px;
-  margin-left: 20px;
-}
-
 .cashtag {
   font-weight: 400;
   font-size: 18px;
 }
 
 .topic-card-price {
-  font: 20px !important;
-  font-weight: 500;
+  font-size: 26px !important;
+  font-weight: bold;
   font-family: $headers-font;
-  margin-top: 40px;
-  margin-left: 56px;
   p {
     margin-bottom: 0;
   }
@@ -45,8 +41,12 @@
 .crypto-press {
   position: absolute;
   right: 30px;
-  top: 30%;
+  top: 0;
   font-size: 36px;
+  bottom: 0;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
   color: $blue;
 }
 
