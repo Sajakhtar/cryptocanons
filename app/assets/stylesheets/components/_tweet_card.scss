@@ -3,8 +3,8 @@
 // }
 
 .followers {
-  font-size: 16px;
-  font-weight: 400;
+  font-size: 15px !important;
+  font-weight: 400 !important;
 }
 
 .margin-bottom-30 {
@@ -57,4 +57,15 @@
   form {
     width: 50%;
   }
+}
+
+.fresh-tag {
+  background: white;
+  padding: 2px 7px;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 12px;
+  display: inline;
+  border: 1px solid $blue;
+  color: $blue;
 }
