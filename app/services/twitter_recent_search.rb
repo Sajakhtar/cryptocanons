@@ -13,9 +13,13 @@ class TwitterRecentSearch
   private
 
   def build_query
-    keyword = "\"#{@topic[:title]}\""
-    keyword = "(\"#{@topic[:title]}\" OR \"#{@topic[:cashtag]}\")" if @topic[:cashtag]
-    "#{keyword} lang:en is:verified"
+    if @topic[:title] == "Cardano"
+      'from:CardanoStiftung OR from:Cardano OR from:cardano_updates OR from:cardano_whale OR from:_CardanoReport OR CardanoDan OR from:Cardians_ OR from:ArdanaProject OR from:CardStarter OR from:CardanoSwap'
+    else
+      keyword = "\"#{@topic[:title]}\""
+      keyword = "(\"#{@topic[:title]}\" OR \"#{@topic[:cashtag]}\")" if @topic[:cashtag]
+      "#{keyword} lang:en is:verified"
+    end
   end
 
   def get_query_params(query)
