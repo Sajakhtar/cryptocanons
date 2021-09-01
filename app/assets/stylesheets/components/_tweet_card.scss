@@ -69,3 +69,12 @@
   border: 1px solid $blue;
   color: $blue;
 }
+
+.bookmark-id {
+  writing-mode: vertical-lr;
+  transform: rotate(-180deg);
+  color: white;
+  position: absolute;
+  top: 6px;
+  left: 8px;
+}
