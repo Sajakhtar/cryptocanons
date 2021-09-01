@@ -96,8 +96,21 @@
 }
 
 .bookmarked-icon {
-  font-size: 30px;
+  font-size: 40px;
   color: $blue;
   position: absolute;
   top: 0;
+}
+
+.accordion-title {
+  color: white;
+}
+
+.white-bg {
+  background: $blue !important;
+}
+
+.icon-font {
+  font-size: 20px;
+  margin-bottom: 0;
 }

@@ -1,5 +1,4 @@
 <div class="card w-100 my-1 shadow-sm margin-top-50" data-controller="chart">
-  <%= link_to "Delete", favorite_topic_path(favorite_topic), method: :delete, remote: true, class: "delete-link" %>
 
 
   <div class="d-flex justify-content-between align-items-start">
@@ -18,8 +17,10 @@
   </div>
   <div class="card-body chart" id="<%= coingecko_id %>" data-coingecko-id="<%= coingecko_id %>" data-chart-target="graph", data-bookmarks="<%= bookmarks.to_json %>">
   </div>
+  <%= link_to "Delete", favorite_topic_path(favorite_topic), method: :delete, remote: true, data: { confirm: "Are you sure?" }, class: "delete-link" %>
+
 </div>
 
-<div class="margin-top-30 margin-bottom-30 text-center ">
+<div class="margin-top-50 margin-bottom-30 text-center ">
   <i class="fas fa-chevron-down cool-icon"></i>
 </div>
