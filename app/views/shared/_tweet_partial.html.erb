@@ -1,6 +1,7 @@
 <div class="card w-100 shadow-sm margin-bottom-30" data-tweet-id="<%= tweet['id'] %>">
   <div class="card-body">
-    <div class="d-flex justify-content-between align-items-center mb-3">
+    <p class="fresh-tag">New Tweet</p>
+    <div class="d-flex justify-content-between align-items-center mb-3 margin-top-30">
       <h5 class="card-title pr-2">@<%= tweet['user']['username'] %> </h5>
       <small class="followers"><%= number_to_human(tweet['user']['public_metrics']['followers_count'], units: { thousand: 'K', million: 'M' }) %> Followers </small>
     </div>

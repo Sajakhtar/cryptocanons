@@ -4,10 +4,10 @@
       <h1 class="topic-heading"><%= @topic.title %></h1>
       <p class="topic-p">Viewing latest tweets about <span class="blue-text"><%= @topic.title %></span></p>
     </div>
-    <p class="margin-top-50 mb-0">Current Price</p>
-    <div class="price-card">
+    <p class="margin-top-50 mb-0">Current Price:</p>
+    <div class="">
       <p class="price topic-price m-0 mr-2" data-coingecko-id="<%= @topic.coingecko_id %>"></p>
-      <p class=""></p>
+      <p class="price-change"></p>
     </div>
   </div>
 
@@ -20,22 +20,22 @@
   </div>
 
     <div class="button-container d-flex flex-column justify-content-center" data-controller="off-canvas">
-
-      <% if @is_favorite %>
-        <%= link_to 'My topics',
-              favorite_topics_path,
-              class: "btn bg-white text-dark"
-        %>
-      <% else %>
-        <%= link_to 'Add to favorites',
-              topic_favorite_topics_path(@topic.id),
-              method: :post,
-              class: "btn bg-white text-dark"
-        %>
-      <% end %>
-
+      <div class="d-flex">
+        <% if @is_favorite %>
+          <%= link_to 'My topics',
+                favorite_topics_path,
+                class: "btn topic-button"
+          %>
+        <% else %>
+          <%= link_to 'Add to favorites',
+                topic_favorite_topics_path(@topic.id),
+                method: :post,
+                class: "btn topic-button"
+          %>
+        <% end %>
+      </div>
       <%#= link_to 'Back', root_path, class: "btn btn-secondary mt-3" %>
-      <button class="btn btn-secondary mt-3" data-action="click->off-canvas#search">Search Topic</button>
+      <button class="btn search-topic-button mt-3" data-action="click->off-canvas#search">Search Topic</button>
       <%= render 'shared/search_canvas', topics: @topics %>
     </div>
 </div>
