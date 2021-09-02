@@ -14,7 +14,7 @@ class TwitterRecentSearch
 
   def build_query
     if @topic[:title] == "Cardano"
-      'from:CardanoStiftung OR from:Cardano OR from:cardano_updates OR from:cardano_whale OR from:_CardanoReport OR CardanoDan OR from:Cardians_ OR from:ArdanaProject OR from:CardStarter OR from:CardanoSwap'
+      'from:CardanoEffect OR from:CNFT_IO OR from:CardanoStiftung OR from:Cardano OR from:cardano_updates OR from:_CardanoReport OR from:Cardians_ OR from:ArdanaProject OR from:CardanoSwap'
     else
       keyword = "\"#{@topic[:title]}\""
       keyword = "(\"#{@topic[:title]}\" OR \"#{@topic[:cashtag]}\")" if @topic[:cashtag]
