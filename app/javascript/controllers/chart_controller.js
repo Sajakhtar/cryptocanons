@@ -168,6 +168,13 @@ export default class extends Controller {
       grid: {
         show: false,
       },
+      tooltip: {
+        y: {
+          formatter: function (val) {
+            return val.toLocaleString('en-US', { style: 'currency', currency: 'USD' })
+          }
+        }
+      },
       annotations: {
         xaxis: this.annotateGraph()
       }
