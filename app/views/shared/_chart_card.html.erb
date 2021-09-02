@@ -1,7 +1,7 @@
 <div class="w-100 my-1 margin-top-50 box" data-controller="chart">
   <%= link_to "Delete", favorite_topic_path(favorite_topic), method: :delete, remote: true, data: { confirm: "Are you sure?" }, class: "delete-link" %>
 
-  <div class="d-flex justify-content-between align-items-start mb-4 text-left">
+  <div class="d-flex justify-content-between align-items-start mb-5 text-left">
     <div class="d-flex mt-2">
       <button class="btn btn-outline-primary btn-sm mr-1" data-chart-target='button' data-action="click->chart#display" data-timeframe="365" data-change="1Y" data-index="0">1Y</button>
       <button class="btn btn-outline-primary btn-sm mr-1" data-chart-target='button' data-action="click->chart#display" data-timeframe="182" data-change="6M" data-index="1">6M</button>
@@ -12,7 +12,7 @@
     </div>
     <div class="mt-2 chart-price topic-card-price text-left">
       <p class="mb-0 text-left" data-chart-target='price'></p>
-      <small data-chart-target='delta' class="text-right"></small>
+      <small data-chart-target='delta' class="text-left" style="font-size: 14px; display:block;"></small>
     </div>
   </div>
   <div class="card-body chart p-0" id="<%= coingecko_id %>" data-coingecko-id="<%= coingecko_id %>" data-chart-target="graph", data-bookmarks="<%= bookmarks.to_json %>">
