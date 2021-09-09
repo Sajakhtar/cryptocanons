@@ -45,7 +45,7 @@ ___
 ___
 ## Demo and Pitch
 
-[Le Wagon Batch #676 Demo day](https://www.youtube.com/watch?v=n8mF1_714zI&t=403s)
+[![Le Wagon Batch #676 Demo day](screenshots/demo.png)](https://www.youtube.com/watch?v=n8mF1_714zI&t=403s)
 
 ___
 ## Roadmap
