@@ -37,15 +37,15 @@ ___
 
 <div align="center">
   <img src="screenshots/home.png" alt="homepage" height="250"/>
-  <img src="screenshots/topic_results.png" alt="homepage" height="250"/>
-  <img src="screenshots/my_topics.png" alt="homepage" height="250"/>
-  <img src="screenshots/topic.png" alt="homepage" height="250"/>
+  <img src="screenshots/topic_results.png" alt="search results" height="250"/>
+  <img src="screenshots/my_topics.png" alt="topics dashboard" height="250"/>
+  <img src="screenshots/topic.png" alt="topic page" height="250"/>
 </div>
 
 ___
 ## Demo and Pitch
 
-[Le Wagon Batch #676 Demo day](#) - *coming soon*
+[Le Wagon Batch #676 Demo day](https://www.youtube.com/watch?v=n8mF1_714zI&t=403s)
 
 ___
 ## Roadmap
