@@ -45,7 +45,13 @@ ___
 ___
 ## Demo and Pitch
 
-[![Le Wagon Batch #676 Demo day](screenshots/demo.png)](https://www.youtube.com/watch?v=n8mF1_714zI&t=403s)
+<div align="center">
+  <a href="https://www.youtube.com/watch?v=n8mF1_714zI&t=403s">
+      <img alt="Qries" src="screenshots/demo.png" height="200">
+  </a>
+</div>
+
+
 
 ___
 ## Roadmap
