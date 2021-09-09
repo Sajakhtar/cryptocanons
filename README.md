@@ -104,6 +104,7 @@ ___
 ## Schema
 
 <img src="screenshots/db_schema.png" alt="homepage" height="300"/>
+
 ___
 ## Installation
 
