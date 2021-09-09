@@ -10,7 +10,7 @@
 1. [Authors and Contributors](#authors-and-contributors)
 1. [License](#license)
 ___
-## About
+## Aboutgi
 
 [CryotoCanons](https://www.cryptocanons.com/) is a Cryoto news and price curator web app.
 
@@ -35,13 +35,12 @@ ___
 ___
 ## Screenshots
 
-<img src="screenshots/home.png" alt="homepage" height="250"/>
-<img src="screenshots/topic_results.png" alt="homepage" height="250"/>
-<img src="screenshots/my_topics.png" alt="homepage" height="250"/>
-<img src="screenshots/topic.png" alt="homepage" height="250"/>
-
-schema image
-app screenshots
+<div align="center">
+  <img src="screenshots/home.png" alt="homepage" height="250"/>
+  <img src="screenshots/topic_results.png" alt="homepage" height="250"/>
+  <img src="screenshots/my_topics.png" alt="homepage" height="250"/>
+  <img src="screenshots/topic.png" alt="homepage" height="250"/>
+</div>
 
 ___
 ## Demo and Pitch
@@ -103,8 +102,9 @@ APIs
 ___
 ## Schema
 
+<div align="center">
 <img src="screenshots/db_schema.png" alt="homepage" height="300"/>
-
+</div>
 ___
 ## Installation
 
