@@ -10,7 +10,7 @@
 1. [Authors and Contributors](#authors-and-contributors)
 1. [License](#license)
 ___
-## Aboutgi
+## About
 
 [CryotoCanons](https://www.cryptocanons.com/) is a Cryoto news and price curator web app.
 
