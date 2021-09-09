@@ -1,16 +1,23 @@
 # Welcome 👋 to CryptoCanons
 
-Foobar is a Python library for dealing with word pluralization.
+[CryotoCanons](https://www.cryptocanons.com/) is a Cryoto news and price curator web app.
 
-## About
+It was developed in 2 weeks as the final project for batch #676 of the [Le Wagon](https://www.lewagon.com/) Web Development Bootcamp in Dubai.
+
+CryotoCanons is a Ruby on Rails web app that uses a base template from [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon](https://www.lewagon.com) team.
+
+Currently it was designed to be __mobile only__, but will be updated to be fully responsive.
 
 
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
 
+# Screenshots
+
+schema image
+app screenshots
 
 ## Demo and Pitch
 
- Embed or link to Demo day video
+ Embed or link to Demo day video - *coming soon*
 
 ___
 
@@ -91,23 +98,25 @@ foobar.singularize('phenomena')
 ## Authors & Contributors
 
 Sajid Akhtar
-- Github
-- LinkedIn
-- Twitter
+- Github: [@Sajakhtar](https://github.com/Sajakhtar)
+- LinkedIn: [@sajakhtar](https://www.linkedin.com/in/sajakhtar/)
+- Twitter: [@sajakhta](https://twitter.com/Sajakhta)
+
 
 Khamza Habibullah
-- Github
-- LinkedIn
+- Github: [@khamzahabibullah](https://github.com/khamzahabibullah)
+- LinkedIn: [@khamzahabibullah](https://www.linkedin.com/in/khamzahabibullah/)
 
 Octavian Serban
-- Github
+- Github: [@octaserban](https://github.com/octaserban)
+- LinkedIn: [@octavianserban](https://www.linkedin.com/in/octavianserban/)
 
 Lanre Fabunmi
-- Github
+- Github: [@Leprof20](https://github.com/Leprof20)
+
+With special thanks to [Tarig Bouazzati](https://github.com/tbouzza) and [Andre R Ferrer](https://github.com/andrerferrer) for the teaching, mentoring and general support during the project.
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
@@ -116,77 +125,37 @@ Please make sure to update tests as appropriate.
 
 
 
-<br>
-
-- 🎓 I’ve recently completed **[Le Wagon](https://www.lewagon.com/web-development-course/full-time) full time web development bootcamp** and I am now proficient in full stack development in Ruby on Rails.
-
-- 🔭 I’m currently working on [CryptoCanons.](https://www.cryptocanons.com/) - this was the final group project during the [Le Wagon bootcamp](https://www.lewagon.com/web-development-course/full-time).
-
-- 📊 🦾 I have scripted solutions in JavaScript and Python for data analysis and automating workflows in Google Marketing Platform (GMP) using various Google APIs.
-
-- ₿ 🌱 I have an interest in Web3.0, Crypto and decentralizatioin in general, so I’m now learning **Clarity Smart Contract language for Stacks blockchain**.
-
-<br>
-
-<h3 align="center">Connect with me:</h3>
-<p align="center">
-<a href="https://twitter.com/sajakhta" target="blank"><img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="sajakhta" height="30" width="40" /></a>
-<a href="https://linkedin.com/in/sajakhtar" target="blank"><img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="sajakhtar" height="30" width="40" /></a>
-</p>
-
-<hr>
-
-<br>
-
-
-<hr>
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-Name
-Choose a self-explaining name for your project.
-
-Description
+## Description
 Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
 
-Badges
+## Badges
 On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
 
-Visuals
+## Visuals
 Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
 
-Installation
+## Installation
 Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
 
-Usage
+## Usage
 Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
 
-Support
+## Support
 Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
 
-Roadmap
+## Roadmap
 If you have ideas for releases in the future, it is a good idea to list them in the README.
 
-Contributing
+## Contributing
 State if you are open to contributions and what your requirements are for accepting them.
 
 For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
 
 You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
 
-Authors and acknowledgment
+## Authors and acknowledgment
 Show your appreciation to those who have contributed to the project.
